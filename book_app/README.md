@@ -6,21 +6,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `npm install`
 
-## manually installing npm packages
+### to install the following scripts of the list below
 
-`npm install react react-dom`
+`react react-dom react-router-dom`
 
-`npm install react-router-dom`
+`@types/react-router-dom --save-dev`
 
-`npm install --save-dev @types/react-router-dom`
+`webpack webpack-cli webpack-dev-server --save-dev`
 
-`npm install webpack webpack-cli webpack-dev-server --save-dev`
+`html-webpack-plugin --save-dev`
 
-`npm install html-webpack-plugin --save-dev`
+`@babel/core babel-loader --save-dev`
 
-`npm install @babel/core babel-loader --save-dev`
-
-`npm install @babel/preset-env @babel/preset-react --save-dev`
+`@babel/preset-env @babel/preset-react --save-dev`
 
 
 ## Available Scripts
