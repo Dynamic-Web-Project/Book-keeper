@@ -2,7 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## npm packages to install before run
+## install all specified npm packages below
+
+`npm install`
+
+## manually installing npm packages
 
 `npm install react react-dom`
 
