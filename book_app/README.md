@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `npm install react react-dom`
 
+`npm install react-router-dom`
+
+`npm install --save-dev @types/react-router-dom`
+
 `npm install webpack webpack-cli webpack-dev-server --save-dev`
 
 `npm install html-webpack-plugin --save-dev`
