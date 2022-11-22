@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## npm packages to install before run
+
+`npm install react react-dom`
+
+`npm install webpack webpack-cli webpack-dev-server --save-dev`
+
+`npm install html-webpack-plugin --save-dev`
+
+`npm install @babel/core babel-loader --save-dev`
+
+`npm install @babel/preset-env @babel/preset-react --save-dev`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
