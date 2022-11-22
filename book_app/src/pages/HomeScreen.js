@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function HomeScreen(){
-    return(
+class Home extends Component {
+  render() {
+    return (
         <div>
-            <p>Body</p>
+          <p>Body</p>
         </div>
-    )
+    );
+  }
 }
-export default HomeScreen;
+
+export default Home;
