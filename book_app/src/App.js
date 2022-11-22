@@ -1,19 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Button} from 'react-bootstrap';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import React, { Component } from 'react';
-import Home from "./pages/HomeScreen";
 import Header from "./components/Header";
-
+import HomeScreen from "./pages/HomeScreen";
 
 class App extends Component {
   render() {
     return (
     <Router>
-        <Header />
-          <Switch>
-              <Route exact path='/' component={Home} />
-          </Switch>
+        <Header/>
+          <Routes>
+              <Route exact path='/' element={<HomeScreen/>} />
+          </Routes>
       </Router>
     );
   }
