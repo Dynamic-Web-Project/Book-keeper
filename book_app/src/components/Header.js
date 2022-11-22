@@ -1,11 +1,12 @@
 import React from "react";
 import {Container, Navbar, Nav, NavDropdown, Image} from 'react-bootstrap';
 import logo from "../logo.png";
+
 function Header(){
     return(
     <Navbar bg="light" variant="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><Image src={logo} height="100"/></Navbar.Brand>
+        <Navbar.Brand href=" "><Image src={logo} height="100"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

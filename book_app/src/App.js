@@ -1,9 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {Container} from "react-bootstrap";
 import Header from "./components/Header";
 import HomeScreen from "./pages/HomeScreen";
-import {Container} from "react-bootstrap";
+import SignupScreen from "./pages/SignupScreen";
 
 class App extends Component {
   render() {
@@ -11,9 +12,10 @@ class App extends Component {
     <Router>
         <Header/>
           <Container>
-          <Routes>
+            <Routes>
+              <Route exact path='/' element={<SignupScreen/>} />
               <Route exact path='/' element={<HomeScreen/>} />
-          </Routes>
+            </Routes>
           </Container>
       </Router>
     );
