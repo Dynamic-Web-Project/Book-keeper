@@ -10,19 +10,19 @@ function LoginScreen() {
     const [error, setError] = useState(null);
     const [loading,setloading] = useState(false);
     const history = useNavigate();
-    const {login} = useAuth();
+    const {login, currentUser} = useAuth();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         setloading(true);
 
         try{
-            await login(email, password);
-            history('/')
+          await login(email, password);
+          history('/')
         }catch(err){
           setError(err.message);
         }finally{
-            setloading(false);
+          setloading(false);
         }
     };
   return (

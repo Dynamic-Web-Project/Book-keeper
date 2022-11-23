@@ -14,6 +14,9 @@ export function AuthProvider(props) {
     const login = (email, password) => {
          return signInWithEmailAndPassword(auth, email, password)
     }
+    const signup(email, password){
+        
+    }
     const value={
         currentUser: initialState.currentUser, login
     }
