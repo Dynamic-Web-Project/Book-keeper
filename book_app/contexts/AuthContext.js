@@ -1,4 +1,5 @@
 import React , {createContext , useContext} from 'react';
+import { auth } from '../src/firebase';
 
 
 const AuthContext = createContext();
@@ -8,6 +9,9 @@ export function useAuth(){
 }
 
  export function AuthProvider(){
+    const login = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
     const value={
         currentUser: initialState.currentUser
     }
