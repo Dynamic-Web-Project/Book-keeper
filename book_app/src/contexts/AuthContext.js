@@ -1,5 +1,6 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React,{createContext,useContext} from 'react';
+import { setUserId } from 'firebase/analytics';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword , signOut , onAuthStateChanged } from 'firebase/auth';
+import React,{ createContext, useContext, useEffect, useState} from 'react';
 import { auth } from '../firebase';
 
 const initialState = {
@@ -11,11 +12,30 @@ export function useAuth(){
 }
 
 export function AuthProvider(props) {
+    const [currentUser, setCurrentUser] = useState(initialState.currentUser);
     const login = (email, password) => {
          return signInWithEmailAndPassword(auth, email, password)
     }
-    const value={
-        currentUser: initialState.currentUser, login
+
+    const signup = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    const logout = () => {
+        return signOut(auth)
+    }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, user =>{
+            if(user){
+                setCurrentUser(user)
+            }else{
+                setCurrentUser(null)}
+        })
+    }, [])
+
+    const value = {
+        currentUser, login, signup, logout
     }
     return (
         <AuthContext.Provider value={value} {...props} />

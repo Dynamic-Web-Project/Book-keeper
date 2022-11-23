@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Alert , Button, Form} from 'react-bootstrap';
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import Loader from '../components/Loader';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext"
 
 function SignupScreen() {
     const [email, setEmail] = useState('');
@@ -10,6 +11,8 @@ function SignupScreen() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const {signup} = useAuth();
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -20,8 +23,7 @@ function SignupScreen() {
             return;
         }
         try{
-            const res = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(res)   
+            await signup(email, password);
         }catch(err){
           setError(err.message);
         }finally{
