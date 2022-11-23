@@ -8,10 +8,11 @@ export function useAuth(){
 }
 
  export function AuthProvider(){
-   return (
-        <div>
-  
-        </div>
+    const value={
+        currentUser: initialState.currentUser
+    }
+    return (
+        <AuthContext.Provider value={value} {...props} />
     );
 }
 
