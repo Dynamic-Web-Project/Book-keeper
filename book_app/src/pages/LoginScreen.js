@@ -17,12 +17,12 @@ function LoginScreen() {
         setloading(true);
 
         try{
-            await login(email, password);
-            history('/')
+          await login(email, password);
+          history('/')
         }catch(err){
           setError(err.message);
         }finally{
-            setloading(false);
+          setloading(false);
         }
     };
   return (
