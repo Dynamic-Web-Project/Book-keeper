@@ -2,35 +2,37 @@ import React, { useState } from "react";
 import { Alert , Button, Form} from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import Loader from '../components/Loader';
 
 function SignupScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
 
         if(password !== confirmPassword){
             setError("Password do not match!");
             return;
         }
         try{
-            const res = createUserWithEmailAndPassword(auth, email, password);
+            const res = await createUserWithEmailAndPassword(auth, email, password);
             console.log(res)   
         }catch(err){
-
+          setError(err.message);
+        }finally{
+          setLoading(false);
         }
     };
   return (
     <>
     <h1 className='fs-4'>Sign Up</h1>
-    {
-        error && (
-            <Alert variant='danger'>
-                {error}
-            </Alert>
+    {loading && <Loader />}
+    { error && (<Alert variant='danger'> {error} </Alert>
         )
     }
     <Form onSubmit={handleSubmit}>
