@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Alert , Button, Form} from 'react-bootstrap';
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
 import Loader from "../components/Loader"
 import {useNavigate} from "react-router-dom"
+import {useAuth} from "../contexts/AuthContext"
 
 function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -11,13 +10,14 @@ function LoginScreen() {
     const [error, setError] = useState(null);
     const [loading,setloading] = useState(false);
     const history = useNavigate();
+    const {login} = useAuth();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         setloading(true);
 
         try{
-            const res = await signInWithEmailAndPassword(auth, email, password);
+            await login(email, password);
             history('/')
         }catch(err){
           setError(err.message);
