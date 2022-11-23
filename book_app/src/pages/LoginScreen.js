@@ -1,36 +1,33 @@
 import React, { useState } from "react";
 import { Alert , Button, Form} from 'react-bootstrap';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import Loader from '../components/Loader';
+import { useNavigate } from "react-router-dom";
 
-function SignupScreen() {
+function LoginScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const history =useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
 
-        if(password !== confirmPassword){
-            setError("Password do not match!");
-            return;
-        }
         try{
-            const res = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(res)   
+            const res = await signInWithEmailAndPassword(auth, email, password);
+            history('/')
         }catch(err){
           setError(err.message);
         }finally{
-          setLoading(false);
+            setLoading(false);
         }
     };
   return (
     <>
-    <h1 className='fs-4'>Sign Up</h1>
+    <h1 className='fs-4'>Login</h1>
     {loading && <Loader />}
     { error && (<Alert variant='danger'> {error} </Alert>
         )
@@ -56,16 +53,6 @@ function SignupScreen() {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Confirm Password</Form.Label>
-        <Form.Control 
-            value={confirmPassword} 
-            onChange={(event) => setConfirmPassword(event.target.value)} 
-            type="Confirm password" 
-            placeholder="Confirm Password" 
-        />
-      </Form.Group>
-
       <Button variant="primary" type="submit">
         Submit
       </Button>
@@ -74,4 +61,4 @@ function SignupScreen() {
   );
 }
 
-export default SignupScreen;
+export default LoginScreen;
