@@ -1,7 +1,9 @@
 import React , {createContext , useContext} from 'react';
 import { auth } from '../src/firebase';
 
-
+const initialState = {
+    currentUser:null
+}
 const AuthContext = createContext();
 
 export function useAuth(){
