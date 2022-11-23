@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import { Alert , Button, Form} from 'react-bootstrap';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+
 function SignupScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         if(password !== confirmPassword){
             setError("Password do not match!");
             return;
+        }
+        try{
+            const res = createUserWithEmailAndPassword(auth, email, password);
+            console.log(res)   
+        }catch(err){
+
         }
     };
   return (
