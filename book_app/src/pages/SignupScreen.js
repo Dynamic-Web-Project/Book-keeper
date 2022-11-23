@@ -13,6 +13,7 @@ function SignupScreen() {
             setError("Password do not match!");
             return;
         }
+        console.log(email, password);
     };
   return (
     <>
