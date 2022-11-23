@@ -10,7 +10,7 @@ function LoginScreen() {
     const [error, setError] = useState(null);
     const [loading,setloading] = useState(false);
     const history = useNavigate();
-    const {login} = useAuth();
+    const {login, currentUser} = useAuth();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
