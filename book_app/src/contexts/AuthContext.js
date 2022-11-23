@@ -3,7 +3,7 @@ import React,{createContext,useContext} from 'react';
 import { auth } from '../firebase';
 
 const initialState = {
-    currentUser:null
+    currentUser:null 
 }
 const AuthContext = createContext()
 export function useAuth(){
@@ -13,9 +13,6 @@ export function useAuth(){
 export function AuthProvider(props) {
     const login = (email, password) => {
          return signInWithEmailAndPassword(auth, email, password)
-    }
-    const signup(email, password){
-        
     }
     const value={
         currentUser: initialState.currentUser, login
