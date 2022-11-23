@@ -1,15 +1,24 @@
-import React, { createContext, useContext } from 'react';
+import React,{createContext,useContext} from 'react';
 
-const AuthContext = createContext();
- 
-export function useAuth(){
-    return useContext(AuthContext);
+const initialState = {
+    currentUser:null
 }
 
-export function AuthProvider(){
+const AuthContext = createContext()
+export function useAuth(){
+    return React.useContext(AuthContext)
+}
+
+
+
+export function AuthProvider(props) {
+
+    const value={
+        currentUser: initialState.currentUser
+    }
+
     return (
-        <div>
-          <p>Body</p>
-        </div>
+        <AuthContext.Provider value={value} {...props} />
+        
     );
 }
