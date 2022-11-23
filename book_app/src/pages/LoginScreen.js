@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import { Alert , Button, Form} from 'react-bootstrap';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import Loader from '../components/Loader';
-import { useNavigate } from "react-router-dom";
+import Loader from "../components/Loader"
+import {useNavigate} from "react-router-dom"
 
 function LoginScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const history =useNavigate();
+    const [loading,setloading] = useState(false);
+    const history = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setLoading(true);
+        setloading(true);
 
         try{
             const res = await signInWithEmailAndPassword(auth, email, password);
@@ -22,16 +22,14 @@ function LoginScreen() {
         }catch(err){
           setError(err.message);
         }finally{
-            setLoading(false);
+            setloading(false);
         }
     };
   return (
     <>
     <h1 className='fs-4'>Login</h1>
-    {loading && <Loader />}
-    { error && (<Alert variant='danger'> {error} </Alert>
-        )
-    }
+    {loading && <Loader/>}
+    {error && <Alert variant='danger'>{error}</Alert>}
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>

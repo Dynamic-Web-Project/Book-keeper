@@ -6,7 +6,7 @@ const initialState = {
 
 const AuthContext = createContext()
 export function useAuth(){
-    return React.usrContext(AuthContext)
+    return React.useContext(AuthContext)
 }
 
 
