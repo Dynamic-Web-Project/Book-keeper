@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Container, Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
+import {useAuth} from "../contexts/AuthContext"
 
 function Header(){
+  const {logout} = useAuth();
+
     return(
     <Navbar bg="light" variant="light" expand="lg">
       <Container>
@@ -23,8 +26,8 @@ function Header(){
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item onClick={logout}>
+                Logout
               </NavDropdown.Item>
             </NavDropdown>
             <>
