@@ -1,16 +1,30 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import React, { useState } from "react";
+import { Alert , Button, Form} from 'react-bootstrap';
 function SignupScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        if(password !== confirmPassword){
+            setError("Password do not match!");
+            return;
+        }
+    };
   return (
     <>
     <h1 className='fs-4'>Sign Up</h1>
-    <Form>
+    {
+        error && (
+            <Alert variant='danger'>
+                {error}
+            </Alert>
+        )
+    }
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
         <Form.Control 
@@ -32,7 +46,7 @@ function SignupScreen() {
       </Form.Group>
 
       <Form.Group className="mb-3">
-        <Form.Label>Password</Form.Label>
+        <Form.Label>Confirm Password</Form.Label>
         <Form.Control 
             value={confirmPassword} 
             onChange={(event) => setConfirmPassword(event.target.value)} 
