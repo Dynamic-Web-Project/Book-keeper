@@ -6,11 +6,13 @@ import Header from "./components/Header";
 import HomeScreen from "./pages/HomeScreen";
 import SignupScreen from "./pages/SignupScreen";
 import LoginScreen from "./pages/LoginScreen";
+import {AuthProvider} from "./contexts/AuthContext";
 
 class App extends Component {
   render() {
     return (
     <Router>
+      <AuthProvider>
         <Header/>
           <Container className="mt-3">
             <Routes>
@@ -19,6 +21,7 @@ class App extends Component {
               <Route exact path='/' element={<HomeScreen/>} />
             </Routes>
           </Container>
+          </AuthProvider>
       </Router>
     );
   }
