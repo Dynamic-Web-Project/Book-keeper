@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Container, Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { useAuth } from "../contexts/AuthContext"
+=======
+import {useAuth} from "../contexts/AuthContext"
+>>>>>>> 719c66bd6b63792b86803d369d8c4768d194f231
 
 function Header(){
   const {logout} = useAuth();
@@ -26,7 +30,11 @@ function Header(){
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
+<<<<<<< HEAD
               <NavDropdown.Item  onClick={logout}>
+=======
+              <NavDropdown.Item onClick={logout}>
+>>>>>>> 719c66bd6b63792b86803d369d8c4768d194f231
                 Logout
               </NavDropdown.Item>
             </NavDropdown>

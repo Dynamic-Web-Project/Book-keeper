@@ -12,8 +12,7 @@ function SignupScreen() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const {signup} = useAuth();
-
-
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
