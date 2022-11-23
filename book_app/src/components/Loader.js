@@ -8,7 +8,6 @@ export default function Loader({variant, className}) {
          <span className="visually-hidden"> Loading.. </span>
         </Spinner>
     );
-  
 }
 
 Loader.defaultProps = {

@@ -1,4 +1,6 @@
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import React,{createContext,useContext} from 'react';
+import { auth } from '../firebase';
 
 const initialState = {
     currentUser:null
@@ -9,16 +11,14 @@ export function useAuth(){
     return React.useContext(AuthContext)
 }
 
-
-
 export function AuthProvider(props) {
-
+    const login = (email, password) => {
+         return signInWithEmailAndPassword(auth, email, password)
+    }
     const value={
         currentUser: initialState.currentUser
     }
-
     return (
         <AuthContext.Provider value={value} {...props} />
-        
     );
 }
