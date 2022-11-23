@@ -15,7 +15,7 @@ export function AuthProvider(props) {
          return signInWithEmailAndPassword(auth, email, password)
     }
     const value={
-        currentUser: initialState.currentUser
+        currentUser: initialState.currentUser, login
     }
     return (
         <AuthContext.Provider value={value} {...props} />
