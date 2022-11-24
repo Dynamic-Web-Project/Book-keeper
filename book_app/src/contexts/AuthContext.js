@@ -13,7 +13,7 @@ export function useAuth() {
     return React.useContext(AuthContext)
 }
 
-function authReducer(state, state) {
+function authReducer(state, action) {
     switch (action.type) {
         case 'LOGIN': return { ...state, currentUser: action.payload }
         case 'LOGOUT': return { ...state, currentUser: null }
@@ -22,8 +22,7 @@ function authReducer(state, state) {
 }
 
 export function AuthProvider(props) {
-    const [state, dispatch] = useReduceer(authReducer, initialState)
-    const [currentUser, setCurrentUser] = useState(initialState.currentUser);
+    const [state, dispatch] = useReducer(authReducer, initialState)
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -37,17 +36,18 @@ export function AuthProvider(props) {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, user => {
+       const unsubcribe = onAuthStateChanged(auth, user => {
             if (user) {
-                setCurrentUser(user)
+                dispatch({type:'LOGIN',payload:user})
             } else {
-                setCurrentUser(null)
+                dispatch({type:'LOGOUT'})
             }
         })
+        return unsubcribe;
     }, [])
 
     const value = {
-        currentUser, login, signup, logout
+        currentUser:state.currentUser, login, signup, logout
     }
     return (
         <AuthContext.Provider value={value} {...props} />
