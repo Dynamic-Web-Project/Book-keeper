@@ -10,11 +10,11 @@ function Header() {
   return (
     <Navbar bg="light" variant="light" expand="lg">
       <Container>
-      <Nav.Link as={Link} to="/">
-            <Navbar.Brand>
+      <a class="logo" href="[absolute url]"> 
                 <Image src={logo} height="100"/>
-            </Navbar.Brand>
-        </Nav.Link>
+                <div>Book-keeper</div>
+        </a>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"></Nav>          

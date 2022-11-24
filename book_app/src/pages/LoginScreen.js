@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Alert, Button, Form } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import Loader from "../components/Loader";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -58,14 +58,14 @@ function LoginScreen() {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <button class="button" type="submit">
           Submit
-        </Button>
+        </button>
       </Form>
       <hr />
-      <Button onClick={loginWithGithub} variant="secondary">
+      <button class="button" onClick={loginWithGithub}>
         <AiFillGithub /> Login with Github
-      </Button>
+      </button>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { Alert , Button, Form} from 'react-bootstrap';
+import { Alert , button, Form} from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import Loader from '../components/Loader';
@@ -77,9 +77,9 @@ function SignupScreen() {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <button class="button" type="submit">
         Submit
-      </Button>
+      </button>
     </Form>
     </>
   );
