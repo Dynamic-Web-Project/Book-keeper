@@ -13,7 +13,7 @@ export function useAuth() {
     return React.useContext(AuthContext)
 }
 
-function authReducer(state, state) {
+function authReducer(state, action) {
     switch (action.type) {
         case 'LOGIN': return { ...state, currentUser: action.payload }
         case 'LOGOUT': return { ...state, currentUser: null }
@@ -22,7 +22,7 @@ function authReducer(state, state) {
 }
 
 export function AuthProvider(props) {
-    const [state, dispatch] = useReduceer(authReducer, initialState)
+    const [state, dispatch] = useReducer(authReducer, initialState)
     const [currentUser, setCurrentUser] = useState(initialState.currentUser);
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
