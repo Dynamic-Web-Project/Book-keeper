@@ -3,6 +3,7 @@ import { Alert, Button, Form } from "react-bootstrap";
 import Loader from "../components/Loader";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import {AiFillGithub} from 'react-icons/ai';
 
 function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -63,7 +64,7 @@ function LoginScreen() {
       </Form>
       <hr />
       <Button onClick={loginWithGithub} variant="secondary">
-          Log in with Github
+          <AiFillGithub/> Login with Github
        </Button>
     </>
   );
