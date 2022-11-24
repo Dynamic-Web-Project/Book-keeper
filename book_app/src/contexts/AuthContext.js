@@ -1,6 +1,6 @@
 import { setUserId } from 'firebase/analytics';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
-import React, { createContext, useContext, useEffect, useState, useReducer } from 'react';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,GithubAuthProvider, signOut, onAuthStateChanged } from 'firebase/auth';
+import React, { createContext, useContext, useEffect, useState, useReducer} from 'react';
 import { auth } from '../firebase';
 
 const initialState = {
@@ -44,8 +44,13 @@ export function AuthProvider(props) {
         return unsubscribe;
     }, [])
 
+    const loginWithGithub = () => {
+        const provider = new GithubAuthProvider();
+        return signInWithPopup(auth,provider);
+    }
+
     const value = {
-        currentUser: state.currentUser, login, signup, logout
+        currentUser: state.currentUser, login, signup, logout , loginWithGithub
     }
     return (
         <AuthContext.Provider value={value} {...props} />

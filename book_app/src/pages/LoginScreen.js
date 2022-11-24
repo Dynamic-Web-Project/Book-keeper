@@ -10,7 +10,7 @@ function LoginScreen() {
   const [error, setError] = useState(null);
   const [loading, setloading] = useState(false);
   const history = useNavigate();
-  const { login, currentUser } = useAuth();
+  const { login, currentUser,loginWithGithub } = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -61,6 +61,10 @@ function LoginScreen() {
           Submit
         </Button>
       </Form>
+      <hr />
+      <Button onClick={loginWithGithub} variant="secondary">
+          Log in with Github
+       </Button>
     </>
   );
 }
