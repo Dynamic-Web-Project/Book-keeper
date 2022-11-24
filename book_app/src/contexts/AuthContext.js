@@ -3,7 +3,6 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, on
 import React, { createContext, useContext, useEffect, useState , useReducer} from 'react';
 import { auth } from '../firebase';
 
-///test
 const initialState = {
     currentUser: null
 }
