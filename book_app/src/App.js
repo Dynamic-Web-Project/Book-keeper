@@ -6,8 +6,8 @@ import Header from "./components/Header";
 import HomeScreen from "./pages/HomeScreen";
 import SignupScreen from "./pages/SignupScreen";
 import LoginScreen from "./pages/LoginScreen";
-import {AuthProvider} from "./contexts/AuthContext";
-
+import { AuthProvider } from "./contexts/AuthContext";
+//test
 class App extends Component {
   render() {
     return (

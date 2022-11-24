@@ -1,22 +1,54 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React,{createContext,useContext} from 'react';
+import { setUserId } from 'firebase/analytics';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
+import React, { createContext, useContext, useEffect, useState, useReducer } from 'react';
 import { auth } from '../firebase';
-
+//test
 const initialState = {
-    currentUser:null
+    currentUser: null
 }
-
 const AuthContext = createContext()
-export function useAuth(){
+
+export function useAuth() {
     return React.useContext(AuthContext)
 }
 
-export function AuthProvider(props) {
-    const login = (email, password) => {
-         return signInWithEmailAndPassword(auth, email, password)
+function authReducer(state, action) {
+    switch (action.type) {
+        case 'LOGIN': return { ...state, currentUser: action.payload }
+        case 'LOGOUT': return { ...state, currentUser: null }
+        default: return state;
     }
-    const value={
-        currentUser: initialState.currentUser, login
+}
+
+export function AuthProvider(props) {
+    const [state, dispatch] = useReducer(authReducer, initialState)
+    const [currentUser, setCurrentUser] = useState(initialState.currentUser);
+    const login = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const signup = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    const logout = () => {
+        return signOut(auth)
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
+            if (user) {
+                dispatch({ type: 'LOGIN', payload: user })
+            } else {
+                dispatch({type:'LOGOUT'})
+            }
+        })
+        return unsubscribe;
+    }, [])
+
+    const value = {
+        currentUser: state.currentUser,
+        login, signup, logout
     }
     return (
         <AuthContext.Provider value={value} {...props} />
