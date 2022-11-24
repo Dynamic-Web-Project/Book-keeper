@@ -23,6 +23,7 @@ function authReducer(state, action) {
 
 export function AuthProvider(props) {
     const [state, dispatch] = useReducer(authReducer, initialState)
+    const [currentUser, setCurrentUser] = useState(initialState.currentUser);
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
