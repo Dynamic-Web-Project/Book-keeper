@@ -6,22 +6,22 @@ import Header from "./components/Header";
 import HomeScreen from "./pages/HomeScreen";
 import SignupScreen from "./pages/SignupScreen";
 import LoginScreen from "./pages/LoginScreen";
-import { AuthProvider } from "./contexts/AuthContext";
+import {AuthProvider} from "./contexts/AuthContext";
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <AuthProvider>
-          <Header />
+    <Router>
+      <AuthProvider>
+        <Header/>
           <Container className="mt-3">
             <Routes>
-              <Route exact path='/signup' element={<SignupScreen />} />
-              <Route exact path='/login' element={<LoginScreen />} />
-              <Route exact path='/' element={<HomeScreen />} />
+              <Route exact path='/signup' element={<SignupScreen/>} />
+              <Route exact path='/login' element={<LoginScreen/>} />
+              <Route exact path='/' element={<HomeScreen/>} />
             </Routes>
           </Container>
-        </AuthProvider>
+          </AuthProvider>
       </Router>
     );
   }
