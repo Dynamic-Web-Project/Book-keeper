@@ -3,7 +3,9 @@ import { Alert , Button, Form} from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import Loader from '../components/Loader';
-
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext"
+//test
 function SignupScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

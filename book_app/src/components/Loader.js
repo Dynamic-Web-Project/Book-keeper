@@ -2,6 +2,7 @@ import React from 'react';
 import {Spinner} from 'react-bootstrap';
 
 export default function Loader({variant, className}) {
+//test
 
     return (
         <Spinner className={className} variant={variant} animation="border">
