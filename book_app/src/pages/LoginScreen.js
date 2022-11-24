@@ -3,7 +3,7 @@ import { Alert, Button, Form } from "react-bootstrap";
 import Loader from "../components/Loader";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import {AiFillGithub} from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 
 function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ function LoginScreen() {
   const [error, setError] = useState(null);
   const [loading, setloading] = useState(false);
   const history = useNavigate();
-  const { login, currentUser,loginWithGithub } = useAuth();
+  const { login, currentUser, loginWithGithub } = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -64,8 +64,8 @@ function LoginScreen() {
       </Form>
       <hr />
       <Button onClick={loginWithGithub} variant="secondary">
-          <AiFillGithub/> Login with Github
-       </Button>
+        <AiFillGithub /> Login with Github
+      </Button>
     </>
   );
 }
