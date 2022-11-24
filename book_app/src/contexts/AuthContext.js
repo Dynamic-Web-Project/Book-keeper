@@ -2,16 +2,15 @@ import { setUserId } from 'firebase/analytics';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
 import React, { createContext, useContext, useEffect, useState, useReducer } from 'react';
 import { auth } from '../firebase';
-//test
+
 const initialState = {
     currentUser: null
 }
 const AuthContext = createContext()
 
 export function useAuth() {
-    return React.useContext(AuthContext)
+    return useContext(AuthContext)
 }
-
 function authReducer(state, action) {
     switch (action.type) {
         case 'LOGIN': return { ...state, currentUser: action.payload }
@@ -22,7 +21,6 @@ function authReducer(state, action) {
 
 export function AuthProvider(props) {
     const [state, dispatch] = useReducer(authReducer, initialState)
-    const [currentUser, setCurrentUser] = useState(initialState.currentUser);
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -47,8 +45,7 @@ export function AuthProvider(props) {
     }, [])
 
     const value = {
-        currentUser: state.currentUser,
-        login, signup, logout
+        currentUser: state.currentUser, login, signup, logout
     }
     return (
         <AuthContext.Provider value={value} {...props} />

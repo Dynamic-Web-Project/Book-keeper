@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Alert , Button, Form} from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
@@ -12,6 +12,9 @@ function SignupScreen() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const history = useNavigate();
+
+    const {signup,currentUser} =useAuth();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -22,14 +25,20 @@ function SignupScreen() {
             return;
         }
         try{
-            const res = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(res)   
+            await signup(email, password); 
         }catch(err){
           setError(err.message);
         }finally{
           setLoading(false);
         }
     };
+
+    useEffect(() => {
+      if (currentUser) {
+        history("/");
+      }
+    }, [currentUser]);
+  
   return (
     <>
     <h1 className='fs-4'>Sign Up</h1>
