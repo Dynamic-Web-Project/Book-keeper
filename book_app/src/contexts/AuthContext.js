@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React,{createContext,useContext} from 'react';
 import { auth } from '../firebase';
 
+//test
 const initialState = {
     currentUser:null
 }
