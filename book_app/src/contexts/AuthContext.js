@@ -1,6 +1,6 @@
 import { setUserId } from 'firebase/analytics';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
-import React, { createContext, useContext, useEffect, useState , useReducer} from 'react';
+import React, { createContext, useContext, useEffect, useState, useReducer } from 'react';
 import { auth } from '../firebase';
 
 //test
@@ -36,18 +36,19 @@ export function AuthProvider(props) {
     }
 
     useEffect(() => {
-       const unsubcribe = onAuthStateChanged(auth, user => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
             if (user) {
-                dispatch({type:'LOGIN',payload:user})
+                dispatch({ type: 'LOGIN', payload: user })
             } else {
                 dispatch({type:'LOGOUT'})
             }
         })
-        return unsubcribe;
+        return unsubscribe;
     }, [])
 
     const value = {
-        currentUser:state.currentUser, login, signup, logout
+        currentUser: state.currentUser,
+        login, signup, logout
     }
     return (
         <AuthContext.Provider value={value} {...props} />
