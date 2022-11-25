@@ -96,13 +96,47 @@ input {
     transform: rotate(360deg);
   }
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
 .navbar {
-  background-color: #D6CFC7;
-  color: black;
+  background-color: #bdc099;
   font-size: larger;
+  font-family: 'Poppins', sans-serif;
+  
 }
 
-div.title {
-  text-align: center;
+.tittle { 
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: black;
+  font-size: 50px;
+  letter-spacing: 6px;
+  cursor: pointer;
 }
+
+
+.tittle::after {
+  content: "BOOK💰KEEPER";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 3px,
+    white 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0px;
+  transition: 1s;
+}
+
+
+.tittle:hover:after {
+  top: -10px;
+  left: -10px;
+} 
