@@ -118,4 +118,19 @@
     font-family: "Lucida Console", Courier, monospace;
     text-decoration: underline black;
   }
+
+  .title {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;;
+    text-transform: uppercase;
+    font-size: 45px;
+    color: green;
+    text-shadow: 0 8px 9px #555531, 0px -2px 1px rgb(203, 218, 165);
+    font-weight: bold;
+    letter-spacing: -4px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
 }

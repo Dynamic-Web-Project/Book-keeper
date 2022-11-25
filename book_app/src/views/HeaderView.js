@@ -9,7 +9,7 @@ export default function HeaderView(props) {
             <Navbar className='navbar'>
                 <Container>
                     <a class="logo" href="/home"><Image src={logo} height="100" /></a>
-                    <div>BOOK-KEEPER</div>
+                    <div className='title'>BOOK💵KEEPER</div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto"></Nav>
