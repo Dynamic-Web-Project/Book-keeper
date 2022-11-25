@@ -9,7 +9,7 @@ export default function HeaderView(props) {
             <Navbar className='navbar'>
                 <Container>
                     <a class="logo" href="/home"><Image src={logo} height="100" /></a>
-                    <div className='title'>BOOK-KEEPER</div>
+                    <div>BOOK-KEEPER</div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto"></Nav>
@@ -19,13 +19,13 @@ export default function HeaderView(props) {
                                     <NavDropdown.Item href="#action/3.3">Settings</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={props.logout}>
-                                        <Nav.Link as={Link} to="/login">Logout</Nav.Link>
+                                        <Nav.Link className='text' as={Link} to="/login">Logout</Nav.Link>
                                     </NavDropdown.Item>
                                 </NavDropdown>
                             ) : (
                                 <>
-                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                                    <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
+                                    <div className='text'><Nav.Link as={Link} to="/login"> Login </Nav.Link></div>
+                                    <div className='text'><Nav.Link as={Link} to="/signup"> Sign Up </Nav.Link></div>
                                 </>
                             )}
                         </Nav>

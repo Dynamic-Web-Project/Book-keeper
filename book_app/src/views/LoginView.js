@@ -1,9 +1,13 @@
 import Loader from "../components/Loader";
 export function LoginScreen(props) {
+    function handleErrorMessage(error) {
+        if (error)
+            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+    }
     return (
         <>
             <h1 className="fs-4">Login</h1>
-            <span style={{ color: "red" }}>{props.error}</span>
+            {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
             <form onSubmit={props.handleSubmit}>
                 <p><label>Email</label></p>
