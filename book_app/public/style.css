@@ -96,7 +96,6 @@ input {
     transform: rotate(360deg);
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
 .navbar {
   background-color: #bdc099;
   font-size: larger;
@@ -105,28 +104,27 @@ input {
 }
 
 .tittle { 
-  font-weight: bold;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   display: block;
   color: black;
-  font-size: 50px;
-  letter-spacing: 6px;
+  font-size: 60px;
+  letter-spacing: 3px;
   cursor: pointer;
 }
 
 
 .tittle::after {
-  content: "BOOK💰KEEPER";
+  content: "BOOK💯KEEPER";
   position: absolute;
   color: transparent;
   background-image: repeating-linear-gradient(
     135deg,
     transparent 0,
-    transparent 3px,
-    white 2px,
+    transparent 2px,
+    white 4px,
     white 4px
   );
   -webkit-background-clip: text;
@@ -135,8 +133,30 @@ input {
   transition: 1s;
 }
 
+.tittle::before {
+  content: "BOOK💯KEEPER";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 1px,
+    white 4px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0;
+  z-index: -1;
+  transition: 1s;
+}
+
 
 .tittle:hover:after {
   top: -10px;
   left: -10px;
+}
+.tittle:hover:before {
+  top: 10px;
+  left: 10px;
 } 
