@@ -117,7 +117,7 @@ input {
 
 
 .tittle::after {
-  content: "BOOK💯KEEPER";
+  content: "BOOK🪙KEEPER";
   position: absolute;
   color: transparent;
   background-image: repeating-linear-gradient(
@@ -134,7 +134,7 @@ input {
 }
 
 .tittle::before {
-  content: "BOOK💯KEEPER";
+  content: "BOOK🪙KEEPER";
   position: absolute;
   color: transparent;
   background-image: repeating-linear-gradient(

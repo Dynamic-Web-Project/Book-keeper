@@ -11,7 +11,7 @@ export default function HeaderView(props) {
           <a class="logo" href="/home">
             <Image src={logo} height="100" /></a>   
             <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900');</style>    
-            <span className="tittle">BOOK💯KEEPER </span>
+            <span className="tittle">BOOK🪙KEEPER </span>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
