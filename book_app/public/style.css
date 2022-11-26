@@ -160,3 +160,8 @@ input {
   top: 10px;
   left: 10px;
 } 
+.errorMessage{
+  background-color: rgb(209, 134, 134);
+  border-radius: 20px;
+  text-align: center;
+}
