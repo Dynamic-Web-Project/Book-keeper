@@ -15,7 +15,7 @@ export function HomeForm(props) {
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
             <div>
-                <Form>
+                <Form onSubmit={props.handleSubmit}>
                     <Row className="align-items-center">
                         <Col sm={2} className="my-1">
                             <DatePicker

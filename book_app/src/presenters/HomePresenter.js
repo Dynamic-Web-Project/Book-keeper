@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase";
+import { db } from "../firebase";
 import { HomePanel } from '../views/HomePanelView';
 import { HomeForm } from '../views/HomeFormView';
 import { HomeList } from '../views/HomeListView';
+import { collection, addDoc } from "firebase/firestore";
 
 export default function HomePresenter() {
-    const [user, setUser] = useState({});
     const [date, setDate] = useState();
     const [type, setType] = useState('income');
     const [desc, setDesc] = useState('');
     const [number, setNumber] = useState();
 
-    async function logout() {
-        await signOut(auth);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (type === '') { return; }
+
+        const docRef = await addDoc(collection(db, "records"), {
+            date: date,
+            type: type,
+            desc: desc,
+            number: number
+        });
     }
-    onAuthStateChanged(auth, (user) => {
-        setUser(user);
-    })
 
     return (
         <div>
             <HomePanel
-                user={user}
-                logout={logout}
+
             />
             <hr />
             <HomeForm
@@ -40,8 +44,7 @@ export default function HomePresenter() {
                 setNumber={setNumber}
             />
             <HomeList
-                user={user}
-                logout={logout}
+
             />
         </div>
     )
