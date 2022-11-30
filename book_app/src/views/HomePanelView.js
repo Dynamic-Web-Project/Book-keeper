@@ -6,6 +6,7 @@ export function HomePanel(props) {
         if (error)
             return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
     }
+
     return (
         <>
             {handleErrorMessage(props.error)}
@@ -21,7 +22,7 @@ export function HomePanel(props) {
                             <Card.Header>Income</Card.Header>
                             <Card.Body>
                                 <Card.Text>
-                                    111
+                                    {props.income}
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -36,7 +37,7 @@ export function HomePanel(props) {
                             <Card.Header>Expense</Card.Header>
                             <Card.Body>
                                 <Card.Text>
-                                    111
+                                    {props.expense}
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -51,7 +52,7 @@ export function HomePanel(props) {
                             <Card.Header>Balance</Card.Header>
                             <Card.Body>
                                 <Card.Text>
-                                    111
+                                    {props.balance}
                                 </Card.Text>
                             </Card.Body>
                         </Card>

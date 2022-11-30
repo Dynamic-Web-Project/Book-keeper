@@ -1,167 +1,166 @@
 .button {
-  appearance: none;
-  background-color: #719064;
-  border: 1px solid rgba(27, 31, 35, .15);
-  border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  padding: 6px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  white-space: nowrap;
+    appearance: none;
+    background-color: #719064;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
 .button:focus:not(:focus-visible):not(.focus-visible) {
-  box-shadow: none;
-  outline: none;
+    box-shadow: none;
+    outline: none;
 }
 
 .button:hover {
-  background-color: #2c974b;
+    background-color: #2c974b;
 }
 
 .button:focus {
-  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
-  outline: none;
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
 }
 
 .button:disabled {
-  background-color: #94d3a2;
-  border-color: rgba(27, 31, 35, .1);
-  color: rgba(255, 255, 255, .8);
-  cursor: default;
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
 }
 
 .button:active {
-  background-color: #298e46;
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
 form {
-  font-family: inherit;
-  font-size: 15px;
+    font-family: inherit;
+    font-size: 15px;
 }
 
 label {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    width: 100%;
 }
 
 .loader {
-  border: 10px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 10px solid #94d3a2;
-  width: 50px;
-  height: 50px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #94d3a2;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 @-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
 
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
 
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
 .navbar {
-  background-color: #bdc099;
-  font-size: larger;
-  font-family: 'Poppins', sans-serif;
-  
+    background-color: #bdc099;
+    font-size: larger;
+    font-family: 'Poppins', sans-serif;
+
 }
 
-.tittle { 
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  color: black;
-  font-size: 60px;
-  letter-spacing: 3px;
-  cursor: pointer;
-}
-
-
-.tittle::after {
-  content: "BOOK🪙KEEPER";
-  position: absolute;
-  color: transparent;
-  background-image: repeating-linear-gradient(
-    135deg,
-    transparent 0,
-    transparent 2px,
-    white 4px,
-    white 4px
-  );
-  -webkit-background-clip: text;
-  top: 0px;
-  left: 0px;
-  transition: 1s;
-}
-
-.tittle::before {
-  content: "BOOK🪙KEEPER";
-  position: absolute;
-  color: transparent;
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent 0,
-    transparent 1px,
-    white 4px,
-    white 4px
-  );
-  -webkit-background-clip: text;
-  top: 0px;
-  left: 0;
-  z-index: -1;
-  transition: 1s;
+.title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: black;
+    font-size: 60px;
+    letter-spacing: 3px;
+    cursor: pointer;
 }
 
 
-.tittle:hover:after {
-  top: -10px;
-  left: -10px;
+.title::after {
+    content: "BOOK🪙KEEPER";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(135deg,
+            transparent 0,
+            transparent 2px,
+            white 4px,
+            white 4px);
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0px;
+    transition: 1s;
 }
-.tittle:hover:before {
-  top: 10px;
-  left: 10px;
-} 
-.errorMessage{
-  background-color: rgb(209, 134, 134);
-  border-radius: 20px;
-  text-align: center;
+
+.title::before {
+    content: "BOOK🪙KEEPER";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(45deg,
+            transparent 0,
+            transparent 1px,
+            white 4px,
+            white 4px);
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0;
+    z-index: -1;
+    transition: 1s;
+}
+
+
+.title:hover:after {
+    top: -10px;
+    left: -10px;
+}
+
+.title:hover:before {
+    top: 10px;
+    left: 10px;
+}
+
+.errorMessage {
+    background-color: rgb(209, 134, 134);
+    border-radius: 20px;
+    text-align: center;
 }

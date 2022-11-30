@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import HeaderPresenter from "../src/presenters/HeaderPresenter.js";
 import LoginPresenter from "../src/presenters/LoginPresenter.js";
 import SignupScreenPresenter from "../src/presenters/SignupPresenter.js";
-import HomePresenter from "./presenters/HomePresenter.js";
+import HomePresenter from "../src/presenters/HomePresenter.js";
 
 class App extends Component {
     render() {
@@ -14,7 +14,7 @@ class App extends Component {
                 <HeaderPresenter />
                 <Container className="mt-3">
                     <Routes>
-                        <Route exact path='/home' element={<HomePresenter />} />
+                        <Route exact path='/' element={<HomePresenter />} />
                         <Route exact path='/login' element={<LoginPresenter />} />
                         <Route exact path='/signup' element={<SignupScreenPresenter />} />
                     </Routes>

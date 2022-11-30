@@ -10,7 +10,7 @@ function SignupScreenPresenter() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -22,7 +22,7 @@ function SignupScreenPresenter() {
         }
         try {
             await createUserWithEmailAndPassword(auth, email, password)
-            history('/');
+            navigate('/');
         } catch (error) {
             setLoading(false);
             switch (error.message) {

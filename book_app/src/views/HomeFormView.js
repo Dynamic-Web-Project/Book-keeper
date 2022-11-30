@@ -1,15 +1,15 @@
 import Loader from "../components/Loader";
-import React, { useState } from "react";
 import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
-import { RiAddFill } from "react-icons/ri";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export function HomeForm(props) {
     function handleErrorMessage(error) {
-        if (error)
+        if (error) {
             return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+        }
     }
+
     return (
         <>
             {handleErrorMessage(props.error)}
@@ -38,8 +38,8 @@ export function HomeForm(props) {
                                 onChange={(event) => props.setType(event.target.value)}
                             >
                                 <option value="">Type</option>
-                                <option value="income">Income</option>
-                                <option value="expense">Expense</option>
+                                <option value="Income">Income</option>
+                                <option value="Expense">Expense</option>
                             </Form.Select>
                         </Col>
 
@@ -63,7 +63,7 @@ export function HomeForm(props) {
                         </Col>
 
                         <Col xs="auto" className="my-1">
-                            <Button type="submit"><RiAddFill />Add</Button>
+                            <Button type="submit">Add</Button>
                         </Col>
                     </Row>
                 </Form>
