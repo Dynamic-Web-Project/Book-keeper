@@ -1,27 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { SignupScreen } from "../views/SignupView";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-function SignupScreenPresenter() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
+export default function SignupScreenPresenter() {
+    const [email, setEmail] = react.useState('');
+    const [password, setPassword] = react.useState('');
+    const [confirmPassword, setConfirmPassword] = react.useState('');
+    const [error, setError] = react.useState(null);
+
+    const [loading, setLoading] = react.useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
+    async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
+        
         if (password !== confirmPassword) {
             setLoading(false);
-            setError("Password do not match!");
+            setError("Passwords do not match!");
             return;
         }
+
         try {
-            await createUserWithEmailAndPassword(auth, email, password)
+            await createUserWithEmailAndPassword(auth, email, password);
             navigate('/');
         } catch (error) {
             setLoading(false);
@@ -48,7 +51,8 @@ function SignupScreenPresenter() {
     };
 
     return <div>
-        <SignupScreen email={email}
+        <SignupScreen
+            email={email}
             setEmail={setEmail}
 
             password={password}
@@ -57,15 +61,13 @@ function SignupScreenPresenter() {
             confirmPassword={confirmPassword}
             setConfirmPassword={setConfirmPassword}
 
+            handleSubmit={handleSubmit}
+
             loading={loading}
             setLoading={setLoading}
 
             error={error}
             setError={setError}
-
-            handleSubmit={handleSubmit}
         />
     </div>
 }
-
-export default SignupScreenPresenter;

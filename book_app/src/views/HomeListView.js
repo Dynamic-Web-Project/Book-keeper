@@ -4,8 +4,7 @@ import * as timeago from "timeago.js";
 
 export function HomeList(props) {
     function handleErrorMessage(error) {
-        if (error)
-            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
 
     function renderList(array) {

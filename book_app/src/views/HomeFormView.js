@@ -5,10 +5,13 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export function HomeForm(props) {
     function handleErrorMessage(error) {
-        if (error) {
-            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
-        }
+        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
+
+    function dateOnChange(date) { props.setDate(date) }
+    function typeOnChange(event) { props.setType(event.target.value) }
+    function inputOnChange(event) { props.setDesc(event.target.value) }
+    function numberOnChange(event) { props.setNumber(event.target.value) }
 
     return (
         <>
@@ -17,11 +20,12 @@ export function HomeForm(props) {
             <div>
                 <Form onSubmit={props.handleSubmit}>
                     <Row className="align-items-center">
+                        {/* Date selector */}
                         <Col sm={2} className="my-1">
                             <DatePicker
                                 required
                                 selected={props.date}
-                                onChange={(date) => props.setDate(date)}
+                                onChange={dateOnChange}
                                 dateFormat="yyyy/MM/dd HH:mm"
                                 maxDate={new Date()}
                                 isClearable
@@ -31,11 +35,12 @@ export function HomeForm(props) {
                             />
                         </Col>
 
+                        {/* Income / Expense selector */}
                         <Col sm={2} className="my-1">
                             <Form.Select
                                 required
                                 value={props.type}
-                                onChange={(event) => props.setType(event.target.value)}
+                                onChange={typeOnChange}
                             >
                                 <option value="">Type</option>
                                 <option value="Income">Income</option>
@@ -43,25 +48,28 @@ export function HomeForm(props) {
                             </Form.Select>
                         </Col>
 
+                        {/* Description input */}
                         <Col sm={2} className="my-1">
                             <FormControl
                                 required
                                 placeholder="Description"
                                 value={props.desc}
-                                onChange={(event) => props.setDesc(event.target.value)}
+                                onChange={inputOnChange}
                             />
                         </Col>
 
+                        {/* Number input */}
                         <Col sm={2} className="my-1">
                             <FormControl
                                 required
                                 placeholder="Number"
                                 type="number"
                                 value={props.number}
-                                onChange={(event) => props.setNumber(event.target.value)}
+                                onChange={numberOnChange}
                             />
                         </Col>
 
+                        {/* Add-button */}
                         <Col xs="auto" className="my-1">
                             <Button type="submit">Add</Button>
                         </Col>

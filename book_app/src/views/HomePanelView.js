@@ -3,8 +3,7 @@ import { Card, Row, Col } from "react-bootstrap";
 
 export function HomePanel(props) {
     function handleErrorMessage(error) {
-        if (error)
-            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
 
     return (

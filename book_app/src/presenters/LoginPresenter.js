@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { LoginScreen } from "../views/LoginView";
 
-
 export default function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [email, setEmail] = react.useState("");
+    const [password, setPassword] = react.useState("");
+    const [error, setError] = react.useState(null);
+
+    const [loading, setLoading] = react.useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
+    async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
+
         try {
-            await signInWithEmailAndPassword(auth, email, password)
-            setError("");
-            navigate('/')
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate('/');
         } catch (error) {
             setLoading(false);
             switch (error.message) {
@@ -51,11 +51,15 @@ export default function Login() {
             <LoginScreen
                 email={email}
                 setEmail={setEmail}
+
                 password={password}
                 setPassword={setPassword}
+
+                handleSubmit={handleSubmit}
+
                 error={error}
                 errorMessage={setError}
-                handleSubmit={handleSubmit}
+
                 loading={loading}
                 setLoading={setLoading}
             />
