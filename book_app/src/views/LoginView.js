@@ -1,6 +1,6 @@
 import Loader from "../components/Loader";
 
-export function LoginScreen(props) {
+export default function LoginView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }

@@ -3,7 +3,7 @@ import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export function HomeForm(props) {
+export default function HomeFormView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { LoginScreen } from "../views/LoginView";
+import LoginView from "../views/LoginView";
 
 export default function Login() {
     const [email, setEmail] = React.useState("");
@@ -48,7 +48,7 @@ export default function Login() {
 
     return (
         <div>
-            <LoginScreen
+            <LoginView
                 email={email}
                 setEmail={setEmail}
 

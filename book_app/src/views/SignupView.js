@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "../components/Loader";
 
-export function SignupScreen(props) {
+export default function SignupView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }

@@ -2,12 +2,12 @@ import React from 'react';
 import { auth, db } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, addDoc, doc, query, where, orderBy, onSnapshot } from "firebase/firestore";
-import { HomePanel } from '../views/HomePanelView';
-import { HomeForm } from '../views/HomeFormView';
-import { HomeList } from '../views/HomeListView';
 import { useNavigate } from "react-router-dom";
+import HomePanelView from '../views/HomePanelView';
+import HomeFormView from '../views/HomeFormView';
+import HomeListView from '../views/HomeListView';
 
-export default function HomePresenter() {
+export default function Home() {
     const [date, setDate] = React.useState();
     const [type, setType] = React.useState();
     const [desc, setDesc] = React.useState('');
@@ -20,24 +20,18 @@ export default function HomePresenter() {
     const [records, setRecords] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
 
-    const { currentUser } = auth;
-    const navigate = useNavigate();
+    /* Make sure to refresh when user is loaded */
+    const [user, setUser] = React.useState(auth);
+    onAuthStateChanged(auth, (user) => { setUser(user); })
 
-    /* Subscribes to authentication state and to make sure to refresh when user is defined */
-    const [, setAuthState] = React.useState(false);
-    function authenticateUser() {
-        async function authSetTruthy(user) { setAuthState(!!user); }
-        /* Unsubscribe */
-        return onAuthStateChanged(auth, authSetTruthy);
-    }
-    React.useEffect(authenticateUser, []);
+    const navigate = useNavigate();
 
     /* Fetches data from the Firestore database */
     function fetchData() {
         async function fetchFromFirebase() {
-            if (currentUser) {
+            if (user) {
                 try {
-                    const q = query(collection(db, "records"), where("user", "==", doc(db, "users", currentUser.uid)), orderBy("date", "desc"));
+                    const q = query(collection(db, "records"), where("user", "==", doc(db, "users", user.uid)), orderBy("date", "desc"));
                     function snapshot(query) {
                         function isIncome(data) { return data.type === "Income"; }
                         function isExpense(data) { return data.type === "Expense"; }
@@ -59,13 +53,13 @@ export default function HomePresenter() {
         }
         fetchFromFirebase();
     }
-    React.useEffect(fetchData, [currentUser]);
+    React.useEffect(fetchData, [user]);
 
     /* Submit handler, also pushes data to Firebase */
     async function handleSubmit(event) {
         event.preventDefault();
         if (type === '') { return; }
-        if (!currentUser) { navigate("/login"); }
+        if (!user) { navigate("/login"); }
 
         try {
             await addDoc(collection(db, "records"), {
@@ -73,7 +67,7 @@ export default function HomePresenter() {
                 type,
                 desc,
                 number,
-                user: doc(db, "users", currentUser.uid)
+                user: doc(db, "users", user.uid)
             })
             setDesc('');
             setNumber('');
@@ -81,16 +75,16 @@ export default function HomePresenter() {
         } catch (error) { console.log(error); }
     }
 
-    if (currentUser) {
+    if (user) {
         return (
             <div>
-                <HomePanel
+                <HomePanelView
                     income={income}
                     expense={expense}
                     balance={balance}
                 />
                 <hr />
-                <HomeForm
+                <HomeFormView
                     date={date}
                     setDate={setDate}
 
@@ -106,7 +100,7 @@ export default function HomePresenter() {
                     handleSubmit={handleSubmit}
                 />
                 <hr />
-                <HomeList
+                <HomeListView
                     loading={loading}
                     records={records}
                 />

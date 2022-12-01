@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
-import { SignupScreen } from "../views/SignupView";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import SignupView from "../views/SignupView";
 
-export default function SignupScreenPresenter() {
+export default function Signup() {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');
@@ -51,7 +51,7 @@ export default function SignupScreenPresenter() {
     };
 
     return <div>
-        <SignupScreen
+        <SignupView
             email={email}
             setEmail={setEmail}
 
