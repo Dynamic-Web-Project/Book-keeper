@@ -164,3 +164,19 @@ input {
     border-radius: 20px;
     text-align: center;
 }
+
+/* Cards in HomePanelView */
+.card.Income {
+    background-color: #bdc099;
+    color: white;
+}
+
+.card.Expense {
+    background-color: #bdc099;
+    color: white;
+}
+
+.card.Balance {
+    background-color: #bdc099;
+    color: white;
+}
