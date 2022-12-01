@@ -5,11 +5,11 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { LoginScreen } from "../views/LoginView";
 
 export default function Login() {
-    const [email, setEmail] = react.useState("");
-    const [password, setPassword] = react.useState("");
-    const [error, setError] = react.useState(null);
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [error, setError] = React.useState(null);
 
-    const [loading, setLoading] = react.useState(false);
+    const [loading, setLoading] = React.useState(false);
     const navigate = useNavigate();
 
     async function handleSubmit(event) {

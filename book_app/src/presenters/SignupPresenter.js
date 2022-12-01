@@ -5,18 +5,18 @@ import { SignupScreen } from "../views/SignupView";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignupScreenPresenter() {
-    const [email, setEmail] = react.useState('');
-    const [password, setPassword] = react.useState('');
-    const [confirmPassword, setConfirmPassword] = react.useState('');
-    const [error, setError] = react.useState(null);
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [confirmPassword, setConfirmPassword] = React.useState('');
+    const [error, setError] = React.useState(null);
 
-    const [loading, setLoading] = react.useState(false);
+    const [loading, setLoading] = React.useState(false);
     const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
-        
+
         if (password !== confirmPassword) {
             setLoading(false);
             setError("Passwords do not match!");
