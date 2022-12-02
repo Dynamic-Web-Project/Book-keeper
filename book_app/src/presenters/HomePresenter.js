@@ -82,7 +82,7 @@ export default function Home() {
 
     if (currentUser) {
         return (
-            <div>
+            <div className='home-wrapper'>
                 <HomePanelView
                     income={income}
                     expense={expense}

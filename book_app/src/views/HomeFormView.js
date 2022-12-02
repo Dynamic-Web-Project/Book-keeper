@@ -14,68 +14,66 @@ export default function HomeFormView(props) {
     function numberOnChange(event) { props.setNumber(event.target.value) }
 
     return (
-        <>
+        <div className="home-form-wrapper">
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <div className="home-form">
-                <Form onSubmit={props.handleSubmit}>
-                    <Row className="align-items-center">
-                        {/* Date selector */}
-                        <Col sm={2} className="my-1">
-                            <DatePicker
-                                required
-                                selected={props.date}
-                                onChange={dateOnChange}
-                                dateFormat="yyyy/MM/dd HH:mm"
-                                maxDate={new Date()}
-                                isClearable
-                                showYearDropdown
-                                showTimeSelect
-                                className="form-control"
-                            />
-                        </Col>
+            <Form onSubmit={props.handleSubmit} className="home-form">
+                <Row className="align-items-center">
+                    {/* Date selector */}
+                    <Col sm={2} className="my-1 home-form-element">
+                        <DatePicker
+                            required
+                            selected={props.date}
+                            onChange={dateOnChange}
+                            dateFormat="yyyy/MM/dd HH:mm"
+                            maxDate={new Date()}
+                            isClearable
+                            showYearDropdown
+                            showTimeSelect
+                            className="form-control"
+                        />
+                    </Col>
 
-                        {/* Income / Expense selector */}
-                        <Col sm={2} className="my-1">
-                            <Form.Select
-                                required
-                                value={props.type}
-                                onChange={typeOnChange}
-                            >
-                                <option value="">Type</option>
-                                <option value="Income">Income</option>
-                                <option value="Expense">Expense</option>
-                            </Form.Select>
-                        </Col>
+                    {/* Income / Expense selector */}
+                    <Col sm={2} className="my-1 home-form-element">
+                        <Form.Select
+                            required
+                            value={props.type}
+                            onChange={typeOnChange}
+                        >
+                            <option value="">Type</option>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+                        </Form.Select>
+                    </Col>
 
-                        {/* Description input */}
-                        <Col sm={2} className="my-1">
-                            <FormControl
-                                required
-                                placeholder="Description"
-                                value={props.desc}
-                                onChange={inputOnChange}
-                            />
-                        </Col>
+                    {/* Description input */}
+                    <Col sm={2} className="my-1 home-form-element">
+                        <FormControl
+                            required
+                            placeholder="Description"
+                            value={props.desc}
+                            onChange={inputOnChange}
+                        />
+                    </Col>
 
-                        {/* Number input */}
-                        <Col sm={2} className="my-1 form-element">
-                            <FormControl
-                                required
-                                placeholder="Number"
-                                type="number"
-                                value={props.number}
-                                onChange={numberOnChange}
-                            />
-                        </Col>
+                    {/* Number input */}
+                    <Col sm={2} className="my-1 home-form-element">
+                        <FormControl
+                            required
+                            placeholder="Amount"
+                            type="number"
+                            value={props.number}
+                            onChange={numberOnChange}
+                        />
+                    </Col>
 
-                        {/* Add-button */}
-                        <Col xs="auto" className="my-1 form-element">
-                            <Button type="submit">Add</Button>
-                        </Col>
-                    </Row>
-                </Form>
-            </div>
-        </>
+                    {/* Add-button */}
+                    <Col xs="auto" className="my-1 home-form-element">
+                        <Button type="submit">Add</Button>
+                    </Col>
+                </Row>
+            </Form>
+        </div>
     );
 }

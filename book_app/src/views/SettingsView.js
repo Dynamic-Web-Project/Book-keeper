@@ -6,12 +6,11 @@ export default function SettingsView(props) {
     }
 
     return (
-        <>
+        <div className="settings-wrapper">
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <div>
-                TO BE ADDED
-            </div>
-        </>
+            <p><label>TO BE IMPLEMENTED</label></p>
+            <p><label>You are logged in as {props.user}.</label></p>
+        </div>
     );
 }

@@ -22,24 +22,22 @@ export default function HomeListView(props) {
     }
 
     return (
-        <>
+        <div className="home-list-wrapper">
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <div className="home-list">
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {renderList(props)}
-                    </tbody>
-                </Table>
-            </div>
-        </>
+            <Table striped bordered hover className="home-list">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {renderList(props)}
+                </tbody>
+            </Table>
+        </div>
     );
 }

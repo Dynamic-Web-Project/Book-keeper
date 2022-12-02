@@ -47,22 +47,20 @@ export default function Login() {
     };
 
     return (
-        <div>
-            <LoginView
-                email={email}
-                setEmail={setEmail}
+        <LoginView
+            email={email}
+            setEmail={setEmail}
 
-                password={password}
-                setPassword={setPassword}
+            password={password}
+            setPassword={setPassword}
 
-                handleSubmit={handleSubmit}
+            handleSubmit={handleSubmit}
 
-                error={error}
-                errorMessage={setError}
+            error={error}
+            errorMessage={setError}
 
-                loading={loading}
-                setLoading={setLoading}
-            />
-        </div>
+            loading={loading}
+            setLoading={setLoading}
+        />
     )
 }

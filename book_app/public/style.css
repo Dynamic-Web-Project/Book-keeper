@@ -192,7 +192,7 @@ input {
 }
 
 /* HomeFormView */
-.home-form {
+.home-form-element {
     font-family: 'Poppins';
 }
 
@@ -220,4 +220,9 @@ input {
 .home-list td {
     font-size: small;
     color: rgba(0, 0, 0, calc(2/3));
+}
+
+/* SettingsView */
+.settings-wrapper label {
+    font-family: 'Poppins';
 }

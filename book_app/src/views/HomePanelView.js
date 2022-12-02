@@ -21,16 +21,14 @@ export default function HomePanelView(props) {
     }
 
     return (
-        <>
+        <div className="home-panel-wrapper">
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <div className="home-panel">
-                <Row>
-                    {renderCard("Income", props.income)}
-                    {renderCard("Expense", props.expense)}
-                    {renderCard("Balance", props.balance)}
-                </Row>
-            </div>
-        </>
+            <Row className="home-panel">
+                {renderCard("Income", props.income)}
+                {renderCard("Expense", props.expense)}
+                {renderCard("Balance", props.balance)}
+            </Row>
+        </div>
     );
 }

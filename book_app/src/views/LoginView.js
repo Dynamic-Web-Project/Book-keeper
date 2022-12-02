@@ -9,7 +9,7 @@ export default function LoginView(props) {
     function passwordOnChange(event) { props.setPassword(event.target.value) }
 
     return (
-        <>
+        <div className="login-wrapper">
             <h1 className="fs-4">Login</h1>
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
@@ -33,8 +33,8 @@ export default function LoginView(props) {
                 /></p>
 
                 {/* Login-button */}
-                <button class="button" type="submit">Submit</button>
+                <button class="button" type="submit">Login</button>
             </form>
-        </>
+        </div>
     );
 }

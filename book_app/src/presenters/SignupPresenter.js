@@ -50,7 +50,7 @@ export default function Signup() {
         }
     };
 
-    return <div>
+    return (
         <SignupView
             email={email}
             setEmail={setEmail}
@@ -69,5 +69,5 @@ export default function Signup() {
             error={error}
             setError={setError}
         />
-    </div>
+    )
 }

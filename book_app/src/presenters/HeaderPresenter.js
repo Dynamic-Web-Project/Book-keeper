@@ -12,11 +12,9 @@ export default function Header() {
     onAuthStateChanged(auth, (user) => { setUser(user); })
 
     return (
-        <div>
-            <HeaderView
-                user={user}
-                logout={logout}
-            />
-        </div>
+        <HeaderView
+            user={user}
+            logout={logout}
+        />
     )
 }

@@ -11,7 +11,7 @@ export default function SignupView(props) {
     function confirmPasswordOnChange(event) { props.setConfirmPassword(event.target.value) }
 
     return (
-        <>
+        <div className="signup-wrapper">
             <h1 className='fs-4'>Sign Up</h1>
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
@@ -44,8 +44,8 @@ export default function SignupView(props) {
                 /></p>
 
                 {/* Signup-button */}
-                <button class="button" type="submit">Submit</button>
+                <button class="button" type="submit">Signup</button>
             </form>
-        </>
+        </div>
     );
 }
