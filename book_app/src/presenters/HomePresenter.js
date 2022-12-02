@@ -1,8 +1,7 @@
-import React from 'react';
-import { auth, db } from "../firebase";
-import { onAuthStateChanged } from "firebase/auth";
-import { collection, addDoc, doc, query, where, orderBy, onSnapshot } from "firebase/firestore";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc, doc, query, where, orderBy, onSnapshot } from "firebase/firestore";
+import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import HomePanelView from '../views/HomePanelView';
 import HomeFormView from '../views/HomeFormView';
 import HomeListView from '../views/HomeListView';

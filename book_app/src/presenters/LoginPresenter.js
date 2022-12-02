@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, signInWithEmailAndPassword } from "../firebaseModel";
 import LoginView from "../views/LoginView";
 
 export default function Login() {

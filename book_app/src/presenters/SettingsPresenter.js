@@ -1,6 +1,5 @@
-import React from 'react';
-import { auth } from "../firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import React from "react";
+import { auth, onAuthStateChanged } from "../firebaseModel";
 import SettingsView from '../views/SettingsView';
 
 export default function Settings() {

@@ -1,6 +1,5 @@
-import React from 'react';
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase";
+import React from "react";
+import { auth, onAuthStateChanged, signOut } from "../firebaseModel";
 import HeaderView from '../views/HeaderView';
 
 export default function Header() {

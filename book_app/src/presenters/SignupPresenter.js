@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, createUserWithEmailAndPassword } from "../firebaseModel";
 import SignupView from "../views/SignupView";
 
 export default function Signup() {

@@ -5,7 +5,7 @@ import logo from "../logo.png";
 
 export default function HeaderView(props) {
     return (
-        <div>
+        <div className="header-wrapper">
             <Navbar className="navbar">
                 <Container>
                     <a className="logo" href="/"><Image src={logo} height="100" /></a>
