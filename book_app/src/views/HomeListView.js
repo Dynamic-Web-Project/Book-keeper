@@ -25,7 +25,7 @@ export default function HomeListView(props) {
         <>
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <div>
+            <div className="home-list">
                 <Table striped bordered hover>
                     <thead>
                         <tr>

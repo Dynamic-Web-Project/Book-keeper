@@ -17,7 +17,7 @@ export default function HomeFormView(props) {
         <>
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <div>
+            <div className="home-form">
                 <Form onSubmit={props.handleSubmit}>
                     <Row className="align-items-center">
                         {/* Date selector */}
@@ -59,7 +59,7 @@ export default function HomeFormView(props) {
                         </Col>
 
                         {/* Number input */}
-                        <Col sm={2} className="my-1">
+                        <Col sm={2} className="my-1 form-element">
                             <FormControl
                                 required
                                 placeholder="Number"
@@ -70,7 +70,7 @@ export default function HomeFormView(props) {
                         </Col>
 
                         {/* Add-button */}
-                        <Col xs="auto" className="my-1">
+                        <Col xs="auto" className="my-1 form-element">
                             <Button type="submit">Add</Button>
                         </Col>
                     </Row>

@@ -9,7 +9,7 @@ export default function HomePanelView(props) {
     function renderCard(headerText, cardText) {
         return (
             <Col md={4}>
-                {/* The 'headerText' param sets the class for modifying in CSS etc. */}
+                {/* The className param sets the class for modifying in CSS etc. */}
                 <Card className={headerText}>
                     <Card.Header>{headerText}</Card.Header>
                     <Card.Body>
@@ -24,7 +24,7 @@ export default function HomePanelView(props) {
         <>
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <div>
+            <div className="home-panel">
                 <Row>
                     {renderCard("Income", props.income)}
                     {renderCard("Expense", props.expense)}

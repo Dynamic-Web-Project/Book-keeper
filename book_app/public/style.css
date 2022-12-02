@@ -165,18 +165,59 @@ input {
     text-align: center;
 }
 
-/* Cards in HomePanelView */
+/* HomePanelView */
+.home-panel {
+    font-family: 'Poppins';
+}
+
 .card.Income {
-    background-color: #bdc099;
-    color: white;
+    background-color: #bdc099e6;
 }
 
 .card.Expense {
-    background-color: #bdc099;
-    color: white;
+    background-color: #bdc099e6;
 }
 
 .card.Balance {
+    background-color: #bdc099e6;
+}
+
+.card-header {
+    font-size: large;
+    color: rgba(0, 0, 0, calc(4/5));
+}
+
+.card-text {
+    color: rgba(0, 0, 0, calc(2/3));
+}
+
+/* HomeFormView */
+.home-form {
+    font-family: 'Poppins';
+}
+
+.btn.btn-primary {
     background-color: #bdc099;
-    color: white;
+    border-color: #bdc099e6;
+    color: rgba(0, 0, 0, calc(2/3));
+}
+
+.btn.btn-primary:hover {
+    background-color: rgba(0, 0, 0, calc(4/5));
+    border-color: #bdc099e6;
+}
+
+/* HomeListView */
+.home-list {
+    font-family: 'Poppins';
+}
+
+.home-list th {
+    font-size: large;
+    color: rgba(0, 0, 0, calc(4/5));
+}
+
+.home-list td {
+    font-size: small;
+    color: rgba(0, 0, 0, calc(2/3));
 }

@@ -20,18 +20,23 @@ export default function Home() {
     const [records, setRecords] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
 
-    /* Make sure to refresh when user is loaded */
-    const [user, setUser] = React.useState(auth);
-    onAuthStateChanged(auth, (user) => { setUser(user); })
-
     const navigate = useNavigate();
+
+    /* Make sure to refresh when user is loaded */
+    const { currentUser } = auth;
+    const [, setIsAuthenticated] = React.useState(false);
+    function userStateChanged() {
+        async function authorize(user) { setIsAuthenticated(!!user); }
+        return onAuthStateChanged(auth, authorize);
+    }
+    React.useEffect(userStateChanged, []);
 
     /* Fetches data from the Firestore database */
     function fetchData() {
         async function fetchFromFirebase() {
-            if (user) {
+            if (currentUser) {
                 try {
-                    const q = query(collection(db, "records"), where("user", "==", doc(db, "users", user.uid)), orderBy("date", "desc"));
+                    const q = query(collection(db, "records"), where("user", "==", doc(db, "users", currentUser.uid)), orderBy("date", "desc"));
                     function snapshot(query) {
                         function isIncome(data) { return data.type === "Income"; }
                         function isExpense(data) { return data.type === "Expense"; }
@@ -53,13 +58,13 @@ export default function Home() {
         }
         fetchFromFirebase();
     }
-    React.useEffect(fetchData, [user]);
+    React.useEffect(fetchData, [currentUser]);
 
     /* Submit handler, also pushes data to Firebase */
     async function handleSubmit(event) {
         event.preventDefault();
         if (type === '') { return; }
-        if (!user) { navigate("/login"); }
+        if (!currentUser) { navigate("/login"); }
 
         try {
             await addDoc(collection(db, "records"), {
@@ -67,7 +72,7 @@ export default function Home() {
                 type,
                 desc,
                 number,
-                user: doc(db, "users", user.uid)
+                user: doc(db, "users", currentUser.uid)
             })
             setDesc('');
             setNumber('');
@@ -75,7 +80,7 @@ export default function Home() {
         } catch (error) { console.log(error); }
     }
 
-    if (user) {
+    if (currentUser) {
         return (
             <div>
                 <HomePanelView
