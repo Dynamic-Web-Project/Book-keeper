@@ -7,10 +7,10 @@ export default function SettingsView(props) {
 
     return (
         <div className="settings-wrapper">
+            <h1 className='fs-4'>Settings</h1>
             {handleErrorMessage(props.error)}
             {props.loading && <Loader />}
-            <p><label>TO BE IMPLEMENTED</label></p>
-            <p><label>You are logged in as {props.user}.</label></p>
+            <p><label>Your UID is: {props.user.uid}.</label></p>
         </div>
     );
 }

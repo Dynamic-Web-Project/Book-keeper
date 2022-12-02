@@ -8,7 +8,7 @@ export default function HeaderView(props) {
         <div>
             <Navbar className="navbar">
                 <Container>
-                    <a class="logo" href="/"><Image src={logo} height="100" /></a>
+                    <a className="logo" href="/"><Image src={logo} height="100" /></a>
                     <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900');</style>
                     <span className="title">BOOK🪙KEEPER </span>
 
