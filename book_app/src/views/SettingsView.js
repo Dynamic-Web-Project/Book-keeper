@@ -1,4 +1,4 @@
-import Loader from "../components/Loader";
+import Loading from "./Loading";
 
 export default function SettingsView(props) {
     function handleErrorMessage(error) {
@@ -9,7 +9,7 @@ export default function SettingsView(props) {
         <div className="settings-wrapper">
             <h1 className='fs-4'>Settings</h1>
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
+            {props.loading && <Loading />}
             <p><label>Your UID is: {props.user.uid}.</label></p>
         </div>
     );

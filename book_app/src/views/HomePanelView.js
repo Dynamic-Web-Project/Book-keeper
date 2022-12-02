@@ -1,4 +1,4 @@
-import Loader from "../components/Loader";
+import Loading from "./Loading";
 import { Card, Row, Col } from "react-bootstrap";
 
 export default function HomePanelView(props) {
@@ -23,7 +23,7 @@ export default function HomePanelView(props) {
     return (
         <div className="home-panel-wrapper">
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
+            {props.loading && <Loading />}
             <Row className="home-panel">
                 {renderCard("Income", props.income)}
                 {renderCard("Expense", props.expense)}

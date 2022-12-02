@@ -1,4 +1,4 @@
-import Loader from "../components/Loader";
+import Loading from "./Loading";
 
 export default function LoginView(props) {
     function handleErrorMessage(error) {
@@ -12,7 +12,7 @@ export default function LoginView(props) {
         <div className="login-wrapper">
             <h1 className="fs-4">Login</h1>
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
+            {props.loading && <Loading />}
             <form onSubmit={props.handleSubmit}>
                 {/* Email input field */}
                 <p><label>Email</label></p>

@@ -1,4 +1,4 @@
-import Loader from "../components/Loader";
+import Loading from "./Loading";
 import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -16,7 +16,7 @@ export default function HomeFormView(props) {
     return (
         <div className="home-form-wrapper">
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
+            {props.loading && <Loading />}
             <Form onSubmit={props.handleSubmit} className="home-form">
                 <Row className="align-items-center">
                     {/* Date selector */}

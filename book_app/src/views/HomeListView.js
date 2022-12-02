@@ -1,4 +1,4 @@
-import Loader from "../components/Loader";
+import Loading from "./Loading";
 import { Table } from "react-bootstrap";
 import * as timeago from "timeago.js";
 
@@ -24,7 +24,7 @@ export default function HomeListView(props) {
     return (
         <div className="home-list-wrapper">
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
+            {props.loading && <Loading />}
             <Table striped bordered hover className="home-list">
                 <thead>
                     <tr>
