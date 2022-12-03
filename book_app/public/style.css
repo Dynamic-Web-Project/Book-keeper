@@ -165,6 +165,18 @@ input {
     text-align: center;
 }
 
+/* Home Forms */
+.form-control:focus,
+.form-select:focus,
+.btn.btn-primary:focus {
+    border-color: #bdc099e6 !important;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
 /* HomePanelView */
 .home-panel {
     font-family: 'Poppins';
