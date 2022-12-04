@@ -1,11 +1,10 @@
-import Loader from "../components/Loader";
+import Loading from "./Loading";
 import { Table } from "react-bootstrap";
 import * as timeago from "timeago.js";
 
-export function HomeList(props) {
+export default function HomeListView(props) {
     function handleErrorMessage(error) {
-        if (error)
-            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
 
     function renderList(array) {
@@ -23,24 +22,22 @@ export function HomeList(props) {
     }
 
     return (
-        <>
+        <div className="home-list-wrapper">
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
-            <div>
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {renderList(props)}
-                    </tbody>
-                </Table>
-            </div>
-        </>
+            {props.loading && <Loading />}
+            <Table striped bordered hover className="home-list">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {renderList(props)}
+                </tbody>
+            </Table>
+        </div>
     );
 }

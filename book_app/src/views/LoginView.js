@@ -1,36 +1,40 @@
-import Loader from "../components/Loader";
-export function LoginScreen(props) {
+import Loading from "./Loading";
+
+export default function LoginView(props) {
     function handleErrorMessage(error) {
-        if (error)
-            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
+
+    function emailOnChange(event) { props.setEmail(event.target.value) }
+    function passwordOnChange(event) { props.setPassword(event.target.value) }
+
     return (
-        <>
+        <div className="login-wrapper">
             <h1 className="fs-4">Login</h1>
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
+            {props.loading && <Loading />}
             <form onSubmit={props.handleSubmit}>
+                {/* Email input field */}
                 <p><label>Email</label></p>
                 <p><input
                     value={props.email}
-                    onChange={(event) => props.setEmail(event.target.value)}
+                    onChange={emailOnChange}
                     type="email"
                     placeholder="Enter email"
                 /></p>
 
+                {/* Password input field */}
                 <p><label>Password</label></p>
                 <p><input
                     value={props.password}
-                    onChange={(event) => props.setPassword(event.target.value)}
+                    onChange={passwordOnChange}
                     type="password"
                     placeholder="Password"
                 /></p>
 
-                <button class="button" type="submit">
-                    Submit
-                </button>
+                {/* Login-button */}
+                <button class="button" type="submit">Login</button>
             </form>
-        </>
+        </div>
     );
 }
-

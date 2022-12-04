@@ -1,65 +1,34 @@
-import Loader from "../components/Loader";
+import Loading from "./Loading";
 import { Card, Row, Col } from "react-bootstrap";
 
-export function HomePanel(props) {
+export default function HomePanelView(props) {
     function handleErrorMessage(error) {
-        if (error)
-            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
+    }
+
+    function renderCard(headerText, cardText) {
+        return (
+            <Col md={4}>
+                {/* The className param sets the class for modifying in CSS etc. */}
+                <Card className={headerText}>
+                    <Card.Header>{headerText}</Card.Header>
+                    <Card.Body>
+                        <Card.Text>{cardText}</Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
+        )
     }
 
     return (
-        <>
+        <div className="home-panel-wrapper">
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
-            <div>
-                <Row>
-                    <Col md={4}>
-                        <Card
-                            bg="primary"
-                            text="white"
-                            className="mb-2"
-                        >
-                            <Card.Header>Income</Card.Header>
-                            <Card.Body>
-                                <Card.Text>
-                                    {props.income}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-
-                    <Col md={4}>
-                        <Card
-                            bg="secondary"
-                            text="white"
-                            className="mb-2"
-                        >
-                            <Card.Header>Expense</Card.Header>
-                            <Card.Body>
-                                <Card.Text>
-                                    {props.expense}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-
-                    <Col md={4}>
-                        <Card
-                            bg="danger"
-                            text="white"
-                            className="mb-2"
-                        >
-                            <Card.Header>Balance</Card.Header>
-                            <Card.Body>
-                                <Card.Text>
-                                    {props.balance}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-
-            </div>
-        </>
+            {props.loading && <Loading />}
+            <Row className="home-panel">
+                {renderCard("Income", props.income)}
+                {renderCard("Expense", props.expense)}
+                {renderCard("Balance", props.balance)}
+            </Row>
+        </div>
     );
 }

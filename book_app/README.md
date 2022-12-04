@@ -2,24 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## install all specified npm packages below
+## install all specified npm packages required by this project to run locally
 
 `npm install`
-
-### to install the following scripts of the list below
-
-`react react-dom react-router-dom`
-
-`@types/react-router-dom --save-dev`
-
-`webpack webpack-cli webpack-dev-server --save-dev`
-
-`html-webpack-plugin --save-dev`
-
-`@babel/core babel-loader --save-dev`
-
-`@babel/preset-env @babel/preset-react --save-dev`
-
 
 ## Available Scripts
 

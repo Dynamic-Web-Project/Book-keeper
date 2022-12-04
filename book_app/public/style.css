@@ -164,3 +164,77 @@ input {
     border-radius: 20px;
     text-align: center;
 }
+
+/* Home Forms */
+.form-control:focus,
+.form-select:focus,
+.btn.btn-primary:focus {
+    border-color: #bdc099e6 !important;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+/* HomePanelView */
+.home-panel {
+    font-family: 'Poppins';
+}
+
+.card.Income {
+    background-color: #bdc099e6;
+}
+
+.card.Expense {
+    background-color: #bdc099e6;
+}
+
+.card.Balance {
+    background-color: #bdc099e6;
+}
+
+.card-header {
+    font-size: large;
+    color: rgba(0, 0, 0, calc(4/5));
+}
+
+.card-text {
+    color: rgba(0, 0, 0, calc(2/3));
+}
+
+/* HomeFormView */
+.home-form-element {
+    font-family: 'Poppins';
+}
+
+.btn.btn-primary {
+    background-color: #bdc099;
+    border-color: #bdc099e6;
+    color: rgba(0, 0, 0, calc(2/3));
+}
+
+.btn.btn-primary:hover {
+    background-color: rgba(0, 0, 0, calc(4/5));
+    border-color: #bdc099e6;
+}
+
+/* HomeListView */
+.home-list {
+    font-family: 'Poppins';
+}
+
+.home-list th {
+    font-size: large;
+    color: rgba(0, 0, 0, calc(4/5));
+}
+
+.home-list td {
+    font-size: small;
+    color: rgba(0, 0, 0, calc(2/3));
+}
+
+/* SettingsView */
+.settings-wrapper label {
+    font-family: 'Poppins';
+}

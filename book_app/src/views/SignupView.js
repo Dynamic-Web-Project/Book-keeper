@@ -1,44 +1,50 @@
-import React from "react";
-import Loader from "../components/Loader";
-export function SignupScreen(props) {
+import Loading from "./Loading";
+
+export default function SignupView(props) {
     function handleErrorMessage(error) {
-        if (error)
-            return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>
+        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
+
+    function emailOnChange(event) { props.setEmail(event.target.value) }
+    function passwordOnChange(event) { props.setPassword(event.target.value) }
+    function confirmPasswordOnChange(event) { props.setConfirmPassword(event.target.value) }
+
     return (
-        <>
+        <div className="signup-wrapper">
             <h1 className='fs-4'>Sign Up</h1>
             {handleErrorMessage(props.error)}
-            {props.loading && <Loader />}
+            {props.loading && <Loading />}
             <form onSubmit={props.handleSubmit}>
+                {/* Email input field */}
                 <p><label>Email</label></p>
                 <p><input
                     value={props.email}
-                    onChange={(event) => props.setEmail(event.target.value)}
+                    onChange={emailOnChange}
                     type="email"
-                    placeholder="Enter email"
+                    placeholder="Enter E-mail"
                 /></p>
 
+                {/* Password input field */}
                 <p><label>Password</label></p>
                 <p><input
                     value={props.password}
-                    onChange={(event) => props.setPassword(event.target.value)}
+                    onChange={passwordOnChange}
                     type="password"
                     placeholder="Password"
                 /></p>
 
+                {/* Confirm password input field */}
                 <p><label>Confirm Password</label></p>
                 <p><input
                     value={props.confirmPassword}
-                    onChange={(event) => props.setConfirmPassword(event.target.value)}
+                    onChange={confirmPasswordOnChange}
                     type="Confirm password"
                     placeholder="Confirm Password"
                 /></p>
 
-                <button class="button" type="submit">
-                    Submit
-                </button>
+                {/* Signup-button */}
+                <button class="button" type="submit">Signup</button>
             </form>
-        </>
+        </div>
     );
 }
