@@ -25,11 +25,10 @@ export default function HomeFormView(props) {
                             required
                             selected={props.date}
                             onChange={dateOnChange}
-                            dateFormat="yyyy/MM/dd HH:mm"
+                            dateFormat="yyyy/MM/dd"
                             maxDate={new Date()}
                             isClearable
                             showYearDropdown
-                            showTimeSelect
                             className="form-control"
                         />
                     </Col>
