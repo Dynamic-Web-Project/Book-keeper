@@ -1,7 +1,6 @@
 import Loading from "./Loading";
 import { Table } from "react-bootstrap";
 
-
 export default function HomeListView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
