@@ -5,6 +5,7 @@ import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import HomePanelView from '../views/HomePanelView';
 import HomeFormView from '../views/HomeFormView';
 import HomeListView from '../views/HomeListView';
+import { propTypes } from "react-bootstrap/esm/Image";
 
 
 export default function Home() {
@@ -94,6 +95,19 @@ export default function Home() {
     }
    
 
+
+    /* Delete handler, also delete data from firebase */
+    async function handelDelete(event) {
+        event.preventDefault();
+        if (!currentUser) { navigate("/login"); }
+        try {
+            await deleteDoc(doc(db, "records", "0hU4sKwsutxEsx03wzXI")).then(
+                () => { console.log("records delete") }
+            )
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     if (currentUser) {
         return (
