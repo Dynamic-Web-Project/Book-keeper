@@ -39,7 +39,6 @@ export default function HomeListView(props) {
             <Table striped bordered hover className="home-list">
                 <thead>
                     <tr>
-                        <th></th>
                         <th>Date</th>
                         <th>Type</th>
                         <th>Description</th>
