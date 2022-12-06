@@ -16,7 +16,7 @@ We have now completed the basic design and operation of user interface.
 1. Delete events
 2. Show more clear dates
 3. complete api function
-4.adjust user interface
+4. adjust user interface
 
 ## Your project file structure 
 We use the react structure, which means we can use a public folder to store our index files, css file. We store the main files in the source folder. In the app we use the react component to render each presenter part. 
