@@ -9,6 +9,7 @@ export default function SettingsView(props) {
         <div className="settings-wrapper">
             <h1 className='fs-4'>Settings</h1>
             {handleErrorMessage(props.error)}
+            <button onClick={props.buttonClicked}>button</button>
             {props.loading && <Loading />}
             <p><label>Your UID is: {props.user.uid}.</label></p>
         </div>
