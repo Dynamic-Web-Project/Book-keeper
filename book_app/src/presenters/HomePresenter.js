@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc } from "firebase/firestore";
+import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc, getFirestore } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import HomePanelView from '../views/HomePanelView';
 import HomeFormView from '../views/HomeFormView';
@@ -80,29 +80,12 @@ export default function Home() {
         } catch (error) { console.log(error); }
     }
 
-    async function handleDelete(event) {
-        event.preventDefault();
-        if (!currentUser) { navigate("/login"); }
-        try {
-            await deleteDoc(doc(db, "records", "0hU4sKwsutxEsx03wzXI")).then(
-                () => { console.log("records delete") }
-            )
-        } catch (error) {
-            console.log(error);
-        }
-    }
-/**zhe li mei yong dao !!! '*/
     /* Delete handler, also delete data from firebase */
     async function handleDelete(event) {
         event.preventDefault();
         if (!currentUser) { navigate("/login"); }
-        try {
-            await deleteDoc(doc(db, "records", "0hU4sKwsutxEsx03wzXI")).then(
-                () => { console.log("records delete") }
-            )
-        } catch (error) {
-            console.log(error);
-        }
+        try { await deleteDoc(doc(db, "records", event.currentTarget.id)); }
+        catch (error) { console.log(error); }
     }
 
     if (currentUser) {
@@ -133,7 +116,8 @@ export default function Home() {
                 <HomeListView
                     loading={loading}
                     records={records}
-                    
+
+                    handleDelete={handleDelete}
                 />
             </div>
         )
