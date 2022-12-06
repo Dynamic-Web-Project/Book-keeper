@@ -11,7 +11,7 @@ export default function HomeListView(props) {
         function listRow(data) {
             return (
                 <tr key={data.id}>
-                    <td>{timeago.format(data.date.toDate())}</td>
+                    <td>{data.date.toDate().toString().substr(4,11)}</td>
                     <td>{data.type}</td>
                     <td>{data.desc}</td>
                     <td>{data.number}</td>
