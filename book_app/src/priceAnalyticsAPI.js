@@ -8,7 +8,7 @@ function treatHTTPResponse(response) {
 }
 
 function transformResult(params) {
-    console.log("transformed: "+params.results);
+    console.log("transformed: " + params.results);
     return params.results;
 }
 
@@ -38,8 +38,8 @@ export function searchProduct(searchParams) {
         method: 'POST',
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Key': '52d3c5199dmshd8a9c2c5d836463p15f626jsn9b8c04124c0e',
-            'X-RapidAPI-Host': 'price-analytics.p.rapidapi.com'
+            'X-RapidAPI-Key': API_KEY,
+            'X-RapidAPI-Host': API_HOST
         },
         body: encodedParams
     };
