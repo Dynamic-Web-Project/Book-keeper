@@ -14,7 +14,6 @@ function HomeListView(props) {
         function listRow(data) {
             return (
                 <tr key={data.id}>
-                    <td><button onClicked={deleteBtnOnClicked}>X</button></td>
                     <td>{data.date.toDate().toString().substr(4,11)}</td>
                     <td>{data.type}</td>
                     <td>{data.desc}</td>
@@ -33,7 +32,6 @@ function HomeListView(props) {
             <Table striped bordered hover className="home-list">
                 <thead>
                     <tr>
-                        <th></th>
                         <th>Date</th>
                         <th>Type</th>
                         <th>Description</th>
