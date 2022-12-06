@@ -1,12 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc } from "firebase/firestore";
+import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc, getFirestore } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import HomePanelView from '../views/HomePanelView';
 import HomeFormView from '../views/HomeFormView';
 import HomeListView from '../views/HomeListView';
-import { propTypes } from "react-bootstrap/esm/Image";
-
+import { deleteId } from "../views/HomeListView";
 
 export default function Home() {
     const [date, setDate] = React.useState();
@@ -86,8 +85,7 @@ export default function Home() {
     async function handleDelete(event) {
         event.preventDefault();
         if (!currentUser) { navigate("/login"); }
-
-        try { await deleteDoc(doc(db, "records", "0hU4sKwsutxEsx03wzXI")); }
+        try { await deleteDoc(doc(db, "records", event.currentTarget.id)); }
         catch (error) { console.log(error); }
     }
 
