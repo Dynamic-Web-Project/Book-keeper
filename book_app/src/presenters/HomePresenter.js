@@ -82,6 +82,8 @@ export default function Home() {
         } catch (error) { console.log(error); }
     }
     
+     /*zhe li mei yong dao !!!！！！！！！！！！！！！ '/
+    /* Delete handler, also delete data from firebase */    
     async function handleDelete(event) {
         event.preventDefault();
         if (!currentUser) { navigate("/login"); }
