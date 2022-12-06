@@ -7,7 +7,7 @@ import SettingsView from '../views/SettingsView';
 export default function Settings() {
     const [user, setUser] = React.useState({});
     // const [results, setResults] = React.useState(productConst.results[0].content);
-    let response = productConst;
+    let response = productConst[0].results[0].content.offers;
     console.log(response);
 
     /* Make sure to refresh when user is loaded */
