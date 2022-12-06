@@ -15,27 +15,38 @@ const postOptions = {
     body: encodedParams
 };
 
-
 const getOptions = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': API_KEY,
-		'X-RapidAPI-Host': 'price-analytics.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': API_KEY,
+        'X-RapidAPI-Host': 'price-analytics.p.rapidapi.com'
+    }
 };
 
-export function getProduct(job_id){
-    return (fetch('https://price-analytics.p.rapidapi.com/poll-job/'+job_id, getOptions)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err)))
+function treatHTTPResponse(response) {
+    if (response.status !== 200) throw new Error("API problem " + response.status);
+    return response.json();
 }
 
+function transformResult(params) {
+    console.log(params.results);
+    return params.results;
+}
+
+export function getProduct(job_id) {
+    return (
+        fetch('https://price-analytics.p.rapidapi.com/poll-job/' + job_id, getOptions)
+            .then(treatHTTPResponse)
+            .then(transformResult)
+    )
+}
 
 export function searchProduct() {
-    return (fetch('https://price-analytics.p.rapidapi.com/search-by-term', postOptions)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err)))
+    return (
+        fetch('https://price-analytics.p.rapidapi.com/search-by-term', postOptions)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err))
+    )
 }
 
