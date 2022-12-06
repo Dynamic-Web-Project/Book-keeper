@@ -6,22 +6,16 @@ export default function HomeListView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
-    
+
     function renderList(array) {
         function listRow(data) {
-            function SomeDeleteRowFunction(data) {
-                // event.target will be the input element.
-                var td = data.target.parentNode; 
-                var tr = td.parentNode; // the row to be removed
-                tr.parentNode.removeChild(tr);
-          }
             return (
                 <tr key={data.id}>
-                    <td>{data.date.toDate().toString().substr(4,11)}</td>
+                    <td>{data.date.toDate().toString().substr(4, 11)}</td>
                     <td>{data.type}</td>
                     <td>{data.desc}</td>
                     <td>{data.number}</td>
-                    <td><button onClick={SomeDeleteRowFunction}>x</button></td>
+                    <td><button onClick={props.handleDelete} type="submit">x</button></td>
                 </tr>
             )
         }
