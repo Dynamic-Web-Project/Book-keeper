@@ -6,10 +6,7 @@ export default function HomeListView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
-
-    function deleteBtnOnClicked(event){
-        return props.handelDelete;
-    }
+    
     function renderList(array) {
         function listRow(data) {
             function SomeDeleteRowFunction(data) {
