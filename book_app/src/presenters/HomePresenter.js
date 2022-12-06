@@ -1,12 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc, doc, query, where, orderBy, onSnapshot,deleteDoc } from "firebase/firestore";
+import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import HomePanelView from '../views/HomePanelView';
 import HomeFormView from '../views/HomeFormView';
 import HomeListView from '../views/HomeListView';
-import { propTypes } from "react-bootstrap/esm/Image";
-
 
 export default function Home() {
     const [date, setDate] = React.useState();
@@ -81,7 +79,7 @@ export default function Home() {
             setDate('');
         } catch (error) { console.log(error); }
     }
-    
+
     async function handleDelete(event) {
         event.preventDefault();
         if (!currentUser) { navigate("/login"); }
@@ -93,11 +91,9 @@ export default function Home() {
             console.log(error);
         }
     }
-   
-
-
+/**zhe li mei yong dao !!! '*/
     /* Delete handler, also delete data from firebase */
-    async function handelDelete(event) {
+    async function handleDelete(event) {
         event.preventDefault();
         if (!currentUser) { navigate("/login"); }
         try {
@@ -132,13 +128,12 @@ export default function Home() {
                     setNumber={setNumber}
 
                     handleSubmit={handleSubmit}
-                   
                 />
                 <hr />
                 <HomeListView
                     loading={loading}
                     records={records}
-                    handleDelete={handleDelete}
+                    
                 />
             </div>
         )

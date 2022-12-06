@@ -13,9 +13,8 @@ export default function HomeListView(props) {
     function renderList(array) {
         function listRow(data) {
             function SomeDeleteRowFunction(data) {
-                // event.target will be the input element.
                 var td = data.target.parentNode; 
-                var tr = td.parentNode; // the row to be removed
+                var tr = td.parentNode;
                 tr.parentNode.removeChild(tr);
           }
             return (
