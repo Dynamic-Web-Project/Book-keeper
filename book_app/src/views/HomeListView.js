@@ -1,26 +1,26 @@
 import Loading from "./Loading";
 import { Table } from "react-bootstrap";
 
-export default function HomeListView(props) {
+var deleteItem;
+function HomeListView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
-
+    
     function renderList(array) {
         function listRow(data) {
             return (
                 <tr key={data.id}>
-                    <td>{data.date.toDate().toString().substr(4, 11)}</td>
+                    <td>{data.date.toDate().toString().substr(4,11)}</td>
                     <td>{data.type}</td>
                     <td>{data.desc}</td>
                     <td>{data.number}</td>
-                    <td><button onClick={props.handleDelete} type="submit">x</button></td>
+                    <td><button id={data.id} onClick={props.handleDelete} type="submit">x</button></td>
                 </tr>
             )
         }
         return array.records.map(listRow);
     }
-
 
     return (
         <div className="home-list-wrapper">
@@ -43,3 +43,5 @@ export default function HomeListView(props) {
         </div>
     );
 }
+export const deleteId = deleteItem;
+export default HomeListView;

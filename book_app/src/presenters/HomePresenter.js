@@ -91,8 +91,7 @@ export default function Home() {
     async function handleDelete(event) {
         event.preventDefault();
         if (!currentUser) { navigate("/login"); }
-
-        try { await deleteDoc(doc(db, "records", "0hU4sKwsutxEsx03wzXI")); }
+        try { await deleteDoc(doc(db, "records", event.currentTarget.id)); }
         catch (error) { console.log(error); }
     }
 
