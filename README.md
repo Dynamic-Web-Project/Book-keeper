@@ -12,12 +12,12 @@ We have now completed the basic design and operation of user interface:
 2. Showing income, expense and balance
 3. Filling in time, type, description, amount to record our spending, which knows the economic situation
 4. Briefly complete part of the API adding
+5. Delete events
 
 ## What we plan to do 
-1. Delete events
-2. Show more clear dates
-3. Complete API function
-4. Adjust user interface
+1. Show more clear dates
+2. Complete API function
+3. Adjust user interface
 
 ## Known issues
 - The API currently only uses mock data from "iPhone 11", hence searching only displays information for this
