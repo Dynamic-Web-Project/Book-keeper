@@ -12,12 +12,12 @@ We have now completed the basic design and operation of user interface:
 2. Showing income, expense and balance
 3. Filling in time, type, description, amount to record our spending, which knows the economic situation
 4. Briefly complete part of the API adding
+5. Delete events
 
 ## What we plan to do 
-1. Delete events
-2. Show more clear dates
-3. Complete api function
-4. Adjust user interface
+1. Show more clear dates
+2. Complete api function
+3. Adjust user interface
 
 ## Our project file structure 
 We use the react structure, which means we can use a public folder to store our index files, css file. We store the main files in the source folder. In the app we use the react component to render each presenter part. 
