@@ -16,8 +16,12 @@ We have now completed the basic design and operation of user interface:
 ## What we plan to do 
 1. Delete events
 2. Show more clear dates
-3. Complete api function
+3. Complete API function
 4. Adjust user interface
+
+## Known issues
+- The API currently only uses mock data from "iPhone 11", hence searching only displays information for this
+- Clicking a link from the API search result does not return to the same page when you go back
 
 ## Our project file structure 
 We use the react structure, which means we can use a public folder to store our index files, css file. We store the main files in the source folder. In the app we use the react component to render each presenter part. 
