@@ -16,10 +16,7 @@ export default function HeaderView(props) {
                             {props.user ? (
                                 <NavDropdown title={ <span style={{color:'white'}} >{props.user.email}</span>} id="basic-nav-dropdown">
                                     <NavDropdown.Item >
-                                        <Nav.Link as={Link} to="/settings"> <span style={{color:'black'}}> Settings</span> </Nav.Link>
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item >
-                                        <Nav.Link as={Link} to="/aboutus" >About us</Nav.Link>
+                                        <Nav.Link as={Link} to="/aboutus" ><span style={{color:'black'}}>About us</span></Nav.Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item >

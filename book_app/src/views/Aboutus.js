@@ -1,16 +1,17 @@
 import React from 'react'
 import {FaDiscord, FaGithub, FaLinkedin, FaMailBulk} from "react-icons/fa"
 import { Card, CardGroup} from "react-bootstrap";
-
+import "../css/about.css"
 
 const About = () => {
     return (
+      <div>
         <div class="about-section">
              <CardGroup>
                 <Card>
-                    <Card.Header style={{fontSize:35}}>Book-keeper</Card.Header>
+                    <Card.Header style={{fontSize:35 , color:'black', textAlign:'center'}}>Book-keeper</Card.Header>
                     <Card.Body>
-                    <Card.Text >
+                    <Card.Text style={{ color:'black'}}>
                     What we decided to create was a live bookkeeping software website. 
                     The way users are able to store their bookkeeping records is by creating an account and logging in. 
                     This gives them the opportunity to edit their bookkeeping history, 
@@ -24,7 +25,7 @@ const About = () => {
                 </Card>
              </CardGroup>
             
-              <CardGroup>
+              <CardGroup style={{textAlign:'center'}}>
                 <Card>
                     <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
                     <Card.Header>Ruimin Ma</Card.Header>
@@ -83,7 +84,7 @@ const About = () => {
                     </Card>
                 </CardGroup>
             <hr/> 
-            <CardGroup className="card bg-dark">
+            <CardGroup className="card bg-dark" style={{textAlign:'center'}}>
                 <Card className="card bg-dark">
                 <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
                     <FaGithub size={40}/>
@@ -102,7 +103,7 @@ const About = () => {
             </CardGroup>
             <hr/>
             <CardGroup>
-                <Card className="card bg-dark">
+                <Card className="card bg-dark" style={{textAlign:'center'}}>
                     <Card.Body>
                         <Card.Text className="container text-white" >
                         A project group from KTH in the course DH2642.
@@ -113,6 +114,7 @@ const About = () => {
                 </Card>
              </CardGroup>
         </div>
+    </div>
     )
 }
 export default About
