@@ -4,12 +4,9 @@
     border-color: #bdc099e6 !important;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
 }
+
 .form-control {
     border-radius: 5px;
-}
-
-.home-form-element {
-    font-family: 'Poppins';
 }
 
 .btn.btn-primary {

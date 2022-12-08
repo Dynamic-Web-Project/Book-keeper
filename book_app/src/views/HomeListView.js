@@ -2,18 +2,17 @@ import Loading from "./Loading";
 import { Table } from "react-bootstrap";
 import '../css/homeListView.css';
 
-
 var deleteItem;
 function HomeListView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
     }
-    
+
     function renderList(array) {
         function listRow(data) {
             return (
                 <tr key={data.id}>
-                    <td>{data.date.toDate().toString().substr(4,11)}</td>
+                    <td>{data.date.toDate().toString().substr(4, 11)}</td>
                     <td>{data.type}</td>
                     <td>{data.desc}</td>
                     <td>{data.number}</td>

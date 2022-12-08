@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../src/presenters/HeaderPresenter";
 import Login from "../src/presenters/LoginPresenter";
 import Signup from "../src/presenters/SignupPresenter";
-import About from './views/Aboutus';
 import Home from "../src/presenters/HomePresenter";
+import About from './views/AboutUs';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 class App extends React.Component {

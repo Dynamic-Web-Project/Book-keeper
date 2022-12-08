@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
-// import { searchProduct, getProduct } from "../priceAnalyticsAPI";
+import { searchProduct, getProduct } from "../priceAnalyticsAPI";
 import productConst from "../productConst"; /* Mocked JSON data */
 import HomePanelView from "../views/HomePanelView";
 import HomeFormView from "../views/HomeFormView";
@@ -95,7 +95,8 @@ export default function Home() {
         catch (error) { console.log(error); }
     }
 
-    let response = productConst[0].results[0].content.offers;
+    let searchResponse, response;
+    // let response = productConst[0].results[0].content.offers;
     /* Search submission button handler */
     async function handleSearch(event) {
         event.preventDefault();
@@ -105,11 +106,16 @@ export default function Home() {
         toggleShow();
         console.log(response);
 
-        // searchResponse = searchProduct(search);
-        // response = getProduct(searchResponse.job_id)
-        // console.log("Searching for " + search + " now.");
-        // console.log("searchResponse: " + searchResponse);
-        // console.log("response: " + response);
+        try {
+            searchResponse = await searchProduct(search);
+            response = await getProduct(searchResponse.job_id);
+
+            console.log("Searching for " + search + " now.");
+            console.log("searchResponse: " + searchResponse);
+            console.log("response: " + response);
+        } catch (error) {
+            console.log("try catch failed: " + error)
+        }
     }
     // const [results, setResults] = React.useState(productConst.results[0].content);
 
@@ -154,7 +160,6 @@ export default function Home() {
                 <HomeSearchView
                     response={response}
                 />
-
             )
         )
     }

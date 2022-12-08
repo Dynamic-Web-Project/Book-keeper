@@ -12,33 +12,31 @@ export default function LoginView(props) {
 
     return (
         <div className="login-wrapper">
-             <img src={backgroundimage} alt="background" />
+            <img src={backgroundimage} alt="background" />
             <div className="login">
-            <h1 style={{color:'white'}}>Login</h1>
-            {handleErrorMessage(props.error)}
-            {props.loading && <Loading />}
-            <form onSubmit={props.handleSubmit}>
-                {/* Email input field */}
-               
-                <p><input className = "inputbox"
-                    value={props.email}
-                    onChange={emailOnChange}
-                    type="email"
-                    placeholder="Enter email"
-                /></p>
+                <h1 style={{ color: 'white' }}>Login</h1>
+                {handleErrorMessage(props.error)}
+                {props.loading && <Loading />}
+                <form onSubmit={props.handleSubmit}>
+                    {/* Email input field */}
+                    <p><input className="inputbox"
+                        value={props.email}
+                        onChange={emailOnChange}
+                        type="email"
+                        placeholder="Enter email"
+                    /></p>
 
-                {/* Password input field */}
-               
-                <p><input className = "inputbox"
-                    value={props.password}
-                    onChange={passwordOnChange}
-                    type="password"
-                    placeholder="Password"
-                /></p>
+                    {/* Password input field */}
+                    <p><input className="inputbox"
+                        value={props.password}
+                        onChange={passwordOnChange}
+                        type="password"
+                        placeholder="Password"
+                    /></p>
 
-                {/* Login-button */}
-                <button class="button" type="submit">Login</button>
-            </form>
+                    {/* Login-button */}
+                    <button class="button" type="submit">Login</button>
+                </form>
             </div>
         </div>
     );

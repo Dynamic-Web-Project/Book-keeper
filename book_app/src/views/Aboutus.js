@@ -1,7 +1,7 @@
 import React from 'react'
 import {FaDiscord, FaGithub, FaLinkedin, FaMailBulk} from "react-icons/fa"
 import { Card, CardGroup} from "react-bootstrap";
-import "../css/about.css"
+import "../css/aboutUs.css"
 
 const About = () => {
     return (

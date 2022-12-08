@@ -15,36 +15,37 @@ export default function SignupView(props) {
         <div className="signup-wrapper">
             <img src={backgroundimage} alt="background" />
             <div className="signup">
-            <h1 style={{color:'white'}}>Sign Up </h1>
-            {handleErrorMessage(props.error)}
-            {props.loading && <Loading />}
-            <form onSubmit={props.handleSubmit}>
-                {/* Email input field */}
-                <p><input className = "inputbox"
-                    value={props.email}
-                    onChange={emailOnChange}
-                    type="email"
-                    placeholder="Enter E-mail"
-                /></p>
+                <h1 style={{ color: 'white' }}>Sign Up </h1>
+                {handleErrorMessage(props.error)}
+                {props.loading && <Loading />}
+                <form onSubmit={props.handleSubmit}>
+                    {/* Email input field */}
+                    <p><input className="inputbox"
+                        value={props.email}
+                        onChange={emailOnChange}
+                        type="email"
+                        placeholder="Enter E-mail"
+                    /></p>
 
-                {/* Password input field */}
-                <p><input className = "inputbox"
-                    value={props.password}
-                    onChange={passwordOnChange}
-                    type="password"
-                    placeholder="Password"
-                /></p>
+                    {/* Password input field */}
+                    <p><input className="inputbox"
+                        value={props.password}
+                        onChange={passwordOnChange}
+                        type="password"
+                        placeholder="Password"
+                    /></p>
 
-                {/* Confirm password input field */}
-                <p><input className = "inputbox"
-                    value={props.confirmPassword}
-                    onChange={confirmPasswordOnChange}
-                    type="Confirm password"
-                    placeholder="Confirm Password"
-                /></p>
-                {/* Signup-button */}
-                <button class="button" type="submit">Signup</button>
-            </form>
+                    {/* Confirm password input field */}
+                    <p><input className="inputbox"
+                        value={props.confirmPassword}
+                        onChange={confirmPasswordOnChange}
+                        type="Confirm password"
+                        placeholder="Confirm Password"
+                    /></p>
+                    
+                    {/* Signup-button */}
+                    <button class="button" type="submit">Signup</button>
+                </form>
             </div>
         </div>
     );
