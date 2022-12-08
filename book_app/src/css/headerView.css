@@ -1,0 +1,26 @@
+
+.logo Image{
+    height: 30px;
+    width: auto;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-brand img{
+        width: 210px;
+        height: auto;
+    }
+    .navbar-brand{
+        padding-left: 0%;
+        margin-left: -20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .logo img{
+        width: 170px;
+        height: auto;
+    }
+    .logo{
+        margin-left: -10px;
+    }
+}

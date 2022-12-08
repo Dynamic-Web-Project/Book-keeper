@@ -1,4 +1,6 @@
 import Loading from "./Loading";
+import '../css/loginView.css';
+import backgroundimage from '../backgroundimage.jpg'
 
 export default function LoginView(props) {
     function handleErrorMessage(error) {
@@ -10,13 +12,15 @@ export default function LoginView(props) {
 
     return (
         <div className="login-wrapper">
-            <h1 className="fs-4">Login</h1>
+             <img src={backgroundimage} alt="background" />
+            <div className="login">
+            <h1 style={{color:'white'}}>Login</h1>
             {handleErrorMessage(props.error)}
             {props.loading && <Loading />}
             <form onSubmit={props.handleSubmit}>
                 {/* Email input field */}
-                <p><label>Email</label></p>
-                <p><input
+               
+                <p><input className = "inputbox"
                     value={props.email}
                     onChange={emailOnChange}
                     type="email"
@@ -24,8 +28,8 @@ export default function LoginView(props) {
                 /></p>
 
                 {/* Password input field */}
-                <p><label>Password</label></p>
-                <p><input
+               
+                <p><input className = "inputbox"
                     value={props.password}
                     onChange={passwordOnChange}
                     type="password"
@@ -35,6 +39,7 @@ export default function LoginView(props) {
                 {/* Login-button */}
                 <button class="button" type="submit">Login</button>
             </form>
+            </div>
         </div>
     );
 }

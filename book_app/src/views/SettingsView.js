@@ -1,4 +1,5 @@
 import Loading from "./Loading";
+import '../css/settingsView.css';
 
 export default function SettingsView(props) {
     function handleErrorMessage(error) {
