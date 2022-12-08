@@ -1,4 +1,6 @@
 import Loading from "./Loading";
+import '../css/signupView.css';
+import backgroundimage from '../backgroundimage.jpg'
 
 export default function SignupView(props) {
     function handleErrorMessage(error) {
@@ -11,13 +13,14 @@ export default function SignupView(props) {
 
     return (
         <div className="signup-wrapper">
-            <h1 className='fs-4'>Sign Up</h1>
+            <img src={backgroundimage} alt="background" />
+            <div className="signup">
+            <h1 style={{color:'white'}}>Sign Up </h1>
             {handleErrorMessage(props.error)}
             {props.loading && <Loading />}
             <form onSubmit={props.handleSubmit}>
                 {/* Email input field */}
-                <p><label>Email</label></p>
-                <p><input
+                <p><input className = "inputbox"
                     value={props.email}
                     onChange={emailOnChange}
                     type="email"
@@ -25,8 +28,7 @@ export default function SignupView(props) {
                 /></p>
 
                 {/* Password input field */}
-                <p><label>Password</label></p>
-                <p><input
+                <p><input className = "inputbox"
                     value={props.password}
                     onChange={passwordOnChange}
                     type="password"
@@ -34,17 +36,16 @@ export default function SignupView(props) {
                 /></p>
 
                 {/* Confirm password input field */}
-                <p><label>Confirm Password</label></p>
-                <p><input
+                <p><input className = "inputbox"
                     value={props.confirmPassword}
                     onChange={confirmPasswordOnChange}
                     type="Confirm password"
                     placeholder="Confirm Password"
                 /></p>
-
                 {/* Signup-button */}
                 <button class="button" type="submit">Signup</button>
             </form>
+            </div>
         </div>
     );
 }

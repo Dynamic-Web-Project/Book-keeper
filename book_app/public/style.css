@@ -1,6 +1,6 @@
 .button {
     appearance: none;
-    background-color: #719064;
+    background-color: #2d9102;
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -104,144 +104,8 @@ input {
     }
 }
 
-.navbar {
-    background-color: #bdc099;
-    font-size: larger;
-    font-family: 'Poppins', sans-serif;
-
-}
-
-.title {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    color: black;
-    font-size: 60px;
-    letter-spacing: 3px;
-    cursor: pointer;
-}
-
-
-.title::after {
-    content: "BOOK🪙KEEPER";
-    position: absolute;
-    color: transparent;
-    background-image: repeating-linear-gradient(135deg,
-            transparent 0,
-            transparent 2px,
-            white 4px,
-            white 4px);
-    -webkit-background-clip: text;
-    top: 0px;
-    left: 0px;
-    transition: 1s;
-}
-
-.title::before {
-    content: "BOOK🪙KEEPER";
-    position: absolute;
-    color: transparent;
-    background-image: repeating-linear-gradient(45deg,
-            transparent 0,
-            transparent 1px,
-            white 4px,
-            white 4px);
-    -webkit-background-clip: text;
-    top: 0px;
-    left: 0;
-    z-index: -1;
-    transition: 1s;
-}
-
-
-.title:hover:after {
-    top: -10px;
-    left: -10px;
-}
-
-.title:hover:before {
-    top: 10px;
-    left: 10px;
-}
-
 .errorMessage {
     background-color: rgb(209, 134, 134);
     border-radius: 20px;
     text-align: center;
-}
-
-/* Home Forms */
-.form-control:focus,
-.form-select:focus,
-.btn.btn-primary:focus {
-    border-color: #bdc099e6 !important;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
-}
-
-.form-control {
-    border-radius: 5px;
-}
-
-/* HomePanelView */
-.home-panel {
-    font-family: 'Poppins';
-}
-
-.card.Income {
-    background-color: #bdc099e6;
-}
-
-.card.Expense {
-    background-color: #bdc099e6;
-}
-
-.card.Balance {
-    background-color: #bdc099e6;
-}
-
-.card-header {
-    font-size: large;
-    color: rgba(0, 0, 0, calc(4/5));
-}
-
-.card-text {
-    color: rgba(0, 0, 0, calc(2/3));
-}
-
-/* HomeFormView */
-.home-form-element {
-    font-family: 'Poppins';
-}
-
-.btn.btn-primary {
-    background-color: #bdc099;
-    border-color: #bdc099e6;
-    color: rgba(0, 0, 0, calc(2/3));
-}
-
-.btn.btn-primary:hover {
-    background-color: rgba(0, 0, 0, calc(4/5));
-    border-color: #bdc099e6;
-}
-
-/* HomeListView */
-.home-list {
-    font-family: 'Poppins';
-}
-
-.home-list th {
-    font-size: large;
-    color: rgba(0, 0, 0, calc(4/5));
-}
-
-.home-list td {
-    font-size: small;
-    color: rgba(0, 0, 0, calc(2/3));
-}
-
-/* SettingsView */
-.settings-wrapper label {
-    font-family: 'Poppins';
 }

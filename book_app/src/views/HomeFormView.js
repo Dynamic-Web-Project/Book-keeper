@@ -2,6 +2,7 @@ import Loading from "./Loading";
 import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import '../css/homeFormView.css';
 
 export default function HomeFormView(props) {
     function handleErrorMessage(error) {

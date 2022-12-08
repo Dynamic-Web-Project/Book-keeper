@@ -1,5 +1,6 @@
 import Loading from "./Loading";
 import { Card, Row, Col } from "react-bootstrap";
+import '../css/homePanelView.css';
 
 export default function HomePanelView(props) {
     function handleErrorMessage(error) {

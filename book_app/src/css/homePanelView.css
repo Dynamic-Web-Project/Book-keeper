@@ -1,0 +1,24 @@
+.home-panel {
+    font-family: 'Poppins';
+}
+
+.card.Income {
+    background-color: #7a7a7ae6;
+}
+
+.card.Expense {
+    background-color: #7a7a7ae6;
+}
+
+.card.Balance {
+    background-color: #7a7a7ae6;
+}
+
+.card-header {
+    font-size: large;
+    color: rgb(255, 255, 255);
+}
+
+.card-text {
+    color: rgb(255, 255, 255);
+}
