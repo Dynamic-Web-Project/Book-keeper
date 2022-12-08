@@ -28,59 +28,39 @@ const About = () => {
               <CardGroup style={{textAlign:'center'}}>
                 <Card>
                     <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
-                    <Card.Header>Ruimin Ma</Card.Header>
+                    <Card.Header style={{ color:'black'}}>Ruimin Ma</Card.Header>
                         <Card.Body>
-                            <Card.Text>
-                                Emial:
-                            </Card.Text>
+                            <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
+                            <FaLinkedin size={40}/>
+                            </a>
                         </Card.Body>
-                    <Card.Footer>
-                    <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                        <FaLinkedin size={20}/>
-                        </a>
-                    </Card.Footer>
                 </Card>
                 <Card>
                     <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
-                    <Card.Header>Peter Li</Card.Header>
+                    <Card.Header style={{ color:'black'}}>Peter Li</Card.Header>
                         <Card.Body>
-                            <Card.Text>
-                                Email:
-                            </Card.Text>
+                            <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
+                            <FaLinkedin size={40}/>
+                            </a>
                         </Card.Body>
-                    <Card.Footer>
-                    <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                        <FaLinkedin size={20}/>
-                        </a>
-                    </Card.Footer>
                 </Card>
                 <Card>
                     <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
-                    <Card.Header>Jingting Zhang</Card.Header>
-                        <Card.Body>
-                            <Card.Text>
-                                Email
-                            </Card.Text>
+                    <Card.Header style={{ color:'black'}}>Jingting Zhang</Card.Header>
+                         <Card.Body>
+                            <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
+                            <FaLinkedin size={40}/>
+                            </a>
                         </Card.Body>
-                    <Card.Footer>
-                        <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                        <FaLinkedin size={20}/>
-                        </a>
-                    </Card.Footer>
                 </Card>
                     <Card>
                         <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
-                        <Card.Header>Duosi Dai</Card.Header>
-                            <Card.Body>
-                                <Card.Text>
-                                    Email:
-                                </Card.Text>
-                            </Card.Body>
-                        <Card.Footer>
+                        <Card.Header style={{ color:'black'}}>Duosi Dai</Card.Header>
+                        <Card.Body>
                             <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                            <FaLinkedin size={20}/>
+                            <FaLinkedin size={40}/>
                             </a>
-                        </Card.Footer>
+                        </Card.Body>
                     </Card>
                 </CardGroup>
             <hr/> 
