@@ -5,8 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../src/presenters/HeaderPresenter";
 import Login from "../src/presenters/LoginPresenter";
 import Signup from "../src/presenters/SignupPresenter";
-import Settings from "../src/presenters/SettingsPresenter"
+import About from './views/Aboutus';
 import Home from "../src/presenters/HomePresenter";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 class App extends React.Component {
     render() {
@@ -17,7 +18,7 @@ class App extends React.Component {
                     <Routes>
                         <Route exact path='/login' element={<Login />} />
                         <Route exact path='/signup' element={<Signup />} />
-                        <Route exact path='/settings' element={<Settings />} />
+                        <Route exact path='/aboutus' element={<About />} />
                         <Route exact path='/' element={<Home />} />
                     </Routes>
                 </Container>
