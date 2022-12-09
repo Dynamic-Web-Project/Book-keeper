@@ -3,7 +3,6 @@ import { Table } from "react-bootstrap";
 import '../css/homeListView.css';
 import "../css/common.css";
 
-let deleteItem;
 function HomeListView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
@@ -45,5 +44,4 @@ function HomeListView(props) {
         </div>
     );
 }
-export const deleteId = deleteItem;
 export default HomeListView;
