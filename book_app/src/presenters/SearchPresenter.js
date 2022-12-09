@@ -64,7 +64,7 @@ export default function Search() {
 
     if (response) {
         return (
-            <>
+            <div className="search-wrapper">
                 <SearchBarView
                     searchQuery={searchQuery}
                     setSearchQuery={setSearchQuery}
@@ -76,11 +76,11 @@ export default function Search() {
                     loading={loading}
                     response={response}
                 />
-            </>
+            </div>
         )
     } else {
         return (
-            <>
+            <div className="search-wrapper">
                 <SearchBarView
                     searchQuery={searchQuery}
                     setSearchQuery={setSearchQuery}
@@ -91,7 +91,7 @@ export default function Search() {
                 <SearchResultsView
                     loading={loading}
                 />
-            </>
+            </div>
         )
     }
 }

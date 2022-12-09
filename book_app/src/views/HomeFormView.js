@@ -78,7 +78,7 @@ export default function HomeFormView(props) {
 
                             {/* Search-button */}
                             <Col sm={2} className="my-1 home-form-element">
-                                <Button className="button" href="/search">Search Product</Button>
+                                <Button className="button" href="/search">Search Products</Button>
                             </Col>
                         </Row>
                     </Form>

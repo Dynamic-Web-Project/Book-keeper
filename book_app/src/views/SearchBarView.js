@@ -1,6 +1,6 @@
 import Loading from "./Loading";
 import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
-import '../css/searchBarView.css';
+import '../css/searchView.css';
 import "../css/common.css";
 
 export default function SearchBar(props) {
@@ -30,7 +30,7 @@ export default function SearchBar(props) {
 
                             {/* Search-button */}
                             <Col sm={3} className="my-1 home-form-element">
-                                <Button type="submit">Search</Button>
+                                <Button className="button" type="submit">Search</Button>
                             </Col>
                         </Row>
                     </Form>

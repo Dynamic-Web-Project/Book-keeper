@@ -34,7 +34,7 @@ function HomeListView(props) {
                         <th>Type</th>
                         <th>Description</th>
                         <th>Amount</th>
-                        <th>      </th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

@@ -1,6 +1,6 @@
 import Loading from "./Loading";
-import { Table } from "react-bootstrap";
-import '../css/searchResultsView.css';
+import { Table, Button } from "react-bootstrap";
+import '../css/searchView.css';
 import "../css/common.css";
 
 export default function SearchResults(props) {
@@ -19,10 +19,17 @@ export default function SearchResults(props) {
                     else { return string }
                 }
 
+                /* Adds selected product to wish list */
+                function addProductToWishList(item) {
+                    // item.handleAdd;
+                    return 0;
+                }
+
                 return (
                     <tr key={item.url}>
                         <td><a href={item.url}>{item.name}</a></td>
                         <td className="result-price">{checkPriceType(item.price)}</td>
+                        <td><Button className="button" id={item.name} onClick={addProductToWishList(item)}>×</Button></td>
                     </tr>
                 )
             }
@@ -31,12 +38,16 @@ export default function SearchResults(props) {
             return (
                 <tr>
                     <td>Searching, please wait!</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             )
         } else {
             return (
                 <tr>
                     <td>No results.</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             )
         }
@@ -52,6 +63,7 @@ export default function SearchResults(props) {
                     <tr>
                         <th>Product Name</th>
                         <th>Price</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

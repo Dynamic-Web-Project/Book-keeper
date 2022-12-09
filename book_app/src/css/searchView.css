@@ -1,0 +1,25 @@
+.search-wrapper {
+    font-family: 'Poppins';
+}
+
+.search-results-wrapper {
+    height: 70vh;
+    overflow: auto;
+}
+
+.search-wrapper .button {
+    background-color: rgb(177, 176, 176);
+    border-color: rgb(243, 239, 239);
+    color: rgba(0, 0, 0, calc(2/3));
+}
+
+.search-wrapper .button:hover {
+    background-color: rgba(0, 0, 0, calc(4/5));
+    border-color: #bdc099e6;
+    color: white;
+}
+
+.search-wrapper .button:focus {
+    border-color: #e7e2f6e6 !important;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
+}
