@@ -1,12 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword } from "../firebaseModel";
+import { auth, onAuthStateChanged, signInWithEmailAndPassword } from "../firebaseModel";
 import LoginView from "../views/LoginView";
 
 export default function Login() {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [error, setError] = React.useState(null);
+
+    const [user, setUser] = React.useState({});
+    /* Make sure to refresh when user is loaded */
+    onAuthStateChanged(auth, (user) => { setUser(user); })
 
     const [loading, setLoading] = React.useState(false);
     const navigate = useNavigate();
@@ -17,7 +21,7 @@ export default function Login() {
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            navigate('/');
+            navigate('/home');
         } catch (error) {
             setLoading(false);
             switch (error.message) {
@@ -45,21 +49,23 @@ export default function Login() {
         }
     };
 
-    return (
-        <LoginView
-            email={email}
-            setEmail={setEmail}
+    if (!user) {
+        return (
+            <LoginView
+                email={email}
+                setEmail={setEmail}
 
-            password={password}
-            setPassword={setPassword}
+                password={password}
+                setPassword={setPassword}
 
-            handleSubmit={handleSubmit}
+                handleSubmit={handleSubmit}
 
-            error={error}
-            errorMessage={setError}
+                error={error}
+                errorMessage={setError}
 
-            loading={loading}
-            setLoading={setLoading}
-        />
-    )
+                loading={loading}
+                setLoading={setLoading}
+            />
+        )
+    } else navigate("/home");
 }

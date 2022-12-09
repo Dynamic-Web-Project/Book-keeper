@@ -31,7 +31,6 @@ export default function Search() {
         setLoading(true);
         const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
-
         try {
             console.log("Searching for " + searchQuery + " now.");
 
@@ -62,36 +61,38 @@ export default function Search() {
     // let response = productConst[0].results[0].content.offers;
     // const [results, setResults] = React.useState(productConst.results[0].content);
 
-    if (response) {
-        return (
-            <div className="search-wrapper">
-                <SearchBarView
-                    searchQuery={searchQuery}
-                    setSearchQuery={setSearchQuery}
+    if (currentUser) {
+        if (response) {
+            return (
+                <div className="search-wrapper">
+                    <SearchBarView
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
 
-                    handleSearch={handleSearch}
-                />
-                <hr />
-                <SearchResultsView
-                    loading={loading}
-                    response={response}
-                />
-            </div>
-        )
-    } else {
-        return (
-            <div className="search-wrapper">
-                <SearchBarView
-                    searchQuery={searchQuery}
-                    setSearchQuery={setSearchQuery}
+                        handleSearch={handleSearch}
+                    />
+                    <hr />
+                    <SearchResultsView
+                        loading={loading}
+                        response={response}
+                    />
+                </div>
+            )
+        } else {
+            return (
+                <div className="search-wrapper">
+                    <SearchBarView
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
 
-                    handleSearch={handleSearch}
-                />
-                <hr />
-                <SearchResultsView
-                    loading={loading}
-                />
-            </div>
-        )
+                        handleSearch={handleSearch}
+                    />
+                    <hr />
+                    <SearchResultsView
+                        loading={loading}
+                    />
+                </div>
+            )
+        }
     }
 }

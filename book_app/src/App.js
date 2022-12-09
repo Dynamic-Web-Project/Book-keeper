@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../src/presenters/HeaderPresenter";
@@ -16,15 +16,16 @@ class App extends React.Component {
                 <Header />
                 <Container className="mt-3">
                     <Routes>
+                        <Route path="/" element={<Navigate replace to="/home" />} />
                         <Route exact path='/login' element={<Login />} />
                         <Route exact path='/signup' element={<Signup />} />
                         <Route exact path='/aboutus' element={<About />} />
                         <Route exact path='/search' element={<Search />} />
-                        <Route exact path='/' element={<Home />} />
+                        <Route exact path='/home' element={<Home />} />
                     </Routes>
                 </Container>
             </Router>
-        );
+        )
     }
 }
 

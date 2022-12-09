@@ -24,7 +24,7 @@ export default function LoginView(props) {
                         value={props.email}
                         onChange={emailOnChange}
                         type="email"
-                        placeholder="Enter email"
+                        placeholder="Enter e-mail"
                     /></p>
 
                     {/* Password input field */}
@@ -41,5 +41,5 @@ export default function LoginView(props) {
                 </form>
             </div>
         </div>
-    );
+    )
 }

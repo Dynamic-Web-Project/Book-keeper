@@ -120,5 +120,11 @@ export default function Home() {
                 />
             </div>
         )
+    } else {
+        return (
+            <div className='home-wrapper'>
+                <span>You are not logged in.</span>
+            </div>
+        )
     }
 }

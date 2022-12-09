@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, createUserWithEmailAndPassword } from "../firebaseModel";
+import { auth, onAuthStateChanged, createUserWithEmailAndPassword } from "../firebaseModel";
 import SignupView from "../views/SignupView";
 
 export default function Signup() {
@@ -8,6 +8,10 @@ export default function Signup() {
     const [password, setPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');
     const [error, setError] = React.useState(null);
+
+    const [user, setUser] = React.useState({});
+    /* Make sure to refresh when user is loaded */
+    onAuthStateChanged(auth, (user) => { setUser(user); })
 
     const [loading, setLoading] = React.useState(false);
     const navigate = useNavigate();
@@ -24,7 +28,7 @@ export default function Signup() {
 
         try {
             await createUserWithEmailAndPassword(auth, email, password);
-            navigate('/');
+            navigate('/home');
         } catch (error) {
             setLoading(false);
             switch (error.message) {
@@ -49,24 +53,26 @@ export default function Signup() {
         }
     };
 
-    return (
-        <SignupView
-            email={email}
-            setEmail={setEmail}
+    if (!user) {
+        return (
+            <SignupView
+                email={email}
+                setEmail={setEmail}
 
-            password={password}
-            setPassword={setPassword}
+                password={password}
+                setPassword={setPassword}
 
-            confirmPassword={confirmPassword}
-            setConfirmPassword={setConfirmPassword}
+                confirmPassword={confirmPassword}
+                setConfirmPassword={setConfirmPassword}
 
-            handleSubmit={handleSubmit}
+                handleSubmit={handleSubmit}
 
-            loading={loading}
-            setLoading={setLoading}
+                loading={loading}
+                setLoading={setLoading}
 
-            error={error}
-            setError={setError}
-        />
-    )
+                error={error}
+                setError={setError}
+            />
+        )
+    } else navigate("/home");
 }

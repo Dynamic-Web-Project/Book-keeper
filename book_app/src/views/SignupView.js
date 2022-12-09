@@ -25,7 +25,7 @@ export default function SignupView(props) {
                         value={props.email}
                         onChange={emailOnChange}
                         type="email"
-                        placeholder="Enter E-mail"
+                        placeholder="Enter e-mail"
                     /></p>
 
                     {/* Password input field */}
@@ -42,7 +42,7 @@ export default function SignupView(props) {
                         className="inputbox"
                         value={props.confirmPassword}
                         onChange={confirmPasswordOnChange}
-                        type="Confirm password"
+                        type="password"
                         placeholder="Confirm Password"
                     /></p>
 
@@ -51,5 +51,5 @@ export default function SignupView(props) {
                 </form>
             </div>
         </div>
-    );
+    )
 }
