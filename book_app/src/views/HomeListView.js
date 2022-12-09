@@ -1,6 +1,6 @@
 import Loading from "./Loading";
-import { Table } from "react-bootstrap";
-import '../css/homeListView.css';
+import { Table, Button } from "react-bootstrap";
+import '../css/homeView.css';
 import "../css/common.css";
 
 function HomeListView(props) {
@@ -16,7 +16,7 @@ function HomeListView(props) {
                     <td>{data.type}</td>
                     <td>{data.desc}</td>
                     <td>{data.number}</td>
-                    <td><button id={data.id} onClick={props.handleDelete} type="submit">x</button></td>
+                    <td><Button className="button" id={data.id} onClick={props.handleDelete}>×</Button></td>
                 </tr>
             )
         }

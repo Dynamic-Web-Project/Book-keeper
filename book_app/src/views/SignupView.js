@@ -1,7 +1,6 @@
 import Loading from "./Loading";
 import '../css/signupView.css';
 import "../css/common.css";
-import backgroundimage from '../backgroundimage.jpg'
 
 export default function SignupView(props) {
     function handleErrorMessage(error) {
@@ -14,14 +13,15 @@ export default function SignupView(props) {
 
     return (
         <div className="signup-wrapper">
-            <img className="blackgroundPic"src={backgroundimage} alt="background" />
+            {handleErrorMessage(props.error)}
+            {props.loading && <Loading />}
+            <div className="blackground-image" />
             <div className="signup">
-                <h1 className="LoginANDSignup" style={{ color: 'white'}}>Sign Up </h1>
-                {handleErrorMessage(props.error)}
-                {props.loading && <Loading />}
+                <h1>Sign Up</h1>
                 <form onSubmit={props.handleSubmit}>
                     {/* Email input field */}
-                    <p><input className="inputbox"
+                    <p><input
+                        className="inputbox"
                         value={props.email}
                         onChange={emailOnChange}
                         type="email"
@@ -29,7 +29,8 @@ export default function SignupView(props) {
                     /></p>
 
                     {/* Password input field */}
-                    <p><input className="inputbox"
+                    <p><input
+                        className="inputbox"
                         value={props.password}
                         onChange={passwordOnChange}
                         type="password"
@@ -37,13 +38,14 @@ export default function SignupView(props) {
                     /></p>
 
                     {/* Confirm password input field */}
-                    <p><input className="inputbox"
+                    <p><input
+                        className="inputbox"
                         value={props.confirmPassword}
                         onChange={confirmPasswordOnChange}
                         type="Confirm password"
                         placeholder="Confirm Password"
                     /></p>
-                    
+
                     {/* Signup-button */}
                     <button class="button" type="submit">Signup</button>
                 </form>

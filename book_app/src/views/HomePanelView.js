@@ -1,6 +1,6 @@
 import Loading from "./Loading";
 import { Card, Row, Col } from "react-bootstrap";
-import '../css/homePanelView.css';
+import '../css/homeView.css';
 import "../css/common.css";
 
 export default function HomePanelView(props) {

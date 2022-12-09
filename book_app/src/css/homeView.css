@@ -1,0 +1,54 @@
+.home-wrapper {
+    font-family: 'Poppins';
+}
+
+.home-wrapper .button {
+    background-color: rgb(177, 176, 176);
+    border-color: rgb(243, 239, 239);
+    color: rgba(0, 0, 0, calc(2/3));
+}
+
+.home-wrapper .button:hover {
+    background-color: rgba(0, 0, 0, calc(4/5));
+    border-color: #bdc099e6;
+    color: white;
+}
+
+.home-wrapper .button:focus {
+    border-color: #e7e2f6e6 !important;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
+}
+
+/* Panel */
+.home-panel .card.Income,
+.home-panel .card.Expense,
+.home-panel .card.Balance {
+    background-color: #7a7a7ae6;
+}
+
+.home-panel .card-header {
+    font-size: large;
+    color: rgb(255, 255, 255);
+}
+
+.home-panel .card-text {
+    text-align: right;
+    color: rgb(255, 255, 255);
+}
+
+/* Form */
+.form-control {
+    border-radius: 5px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #e7e2f6e6 !important;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
+}
+
+/* List */
+.home-list-wrapper {
+    height: 60vh;
+    overflow: auto;
+}

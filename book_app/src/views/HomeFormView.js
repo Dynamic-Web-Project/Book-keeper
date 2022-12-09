@@ -2,7 +2,7 @@ import Loading from "./Loading";
 import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import '../css/homeFormView.css';
+import '../css/homeView.css';
 import "../css/common.css";
 
 export default function HomeFormView(props) {
@@ -73,12 +73,12 @@ export default function HomeFormView(props) {
 
                             {/* Add-button */}
                             <Col sm={1} className="my-1 home-form-element">
-                                <Button type="submit">Add</Button>
+                                <Button className="button" type="submit">Add</Button>
                             </Col>
 
                             {/* Search-button */}
                             <Col sm={2} className="my-1 home-form-element">
-                                <Button href="/search">Search Product</Button>
+                                <Button className="button" href="/search">Search Product</Button>
                             </Col>
                         </Row>
                     </Form>

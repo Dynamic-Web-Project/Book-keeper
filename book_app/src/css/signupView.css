@@ -10,6 +10,17 @@
     color: aliceblue;
 }
 
+.signup-wrapper .blackground-image {
+    background-image: url("../imgs/backgroundimage.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
 .signup {
     position: absolute;
     top: 35%;
@@ -19,19 +30,13 @@
     height: auto;
 }
 
-.signup-wrapper img {
-    width: 100%;
-    height: flex;
-    object-fit: cover;
-}
-
 .signup p {
     font-size: 1.5rem;
     color: #fff;
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.inputbox {
+.login-wrapper .inputbox {
     margin: auto;
     display: block;
     margin: auto;
@@ -42,4 +47,55 @@
     resize: vertical;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
     width: 80%;
+}
+
+.signup-wrapper .button {
+    appearance: none;
+    background-color: #737970;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.signup-wrapper .button:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
+.signup-wrapper .button:hover {
+    background-color: #414341;
+}
+
+.signup-wrapper .button:focus {
+    box-shadow: rgba(255, 255, 255, 0.4) 0 0 0 3px;
+    outline: none;
+}
+
+.signup-wrapper .button:disabled {
+    background-color: #c7c9c7;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+.signup-wrapper .button:active {
+    background-color: #424a45;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
