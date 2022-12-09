@@ -4,7 +4,7 @@ import "../css/common.css";
 
 export default function LoginView(props) {
     function handleErrorMessage(error) {
-        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
+        if (error) return <div className="errorMessage"><span>{props.error}</span></div>;
     }
 
     function emailOnChange(event) { props.setEmail(event.target.value) }

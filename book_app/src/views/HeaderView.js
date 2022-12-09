@@ -6,7 +6,6 @@ import '../css/headerView.css';
 import "../css/common.css";
 
 export default function HeaderView(props) {
-
     function renderUserMenu(props) {
         if (props.user) {
             return (
