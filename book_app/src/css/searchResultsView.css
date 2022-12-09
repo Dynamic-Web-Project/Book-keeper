@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
-.home-list-wrapper {
+.search-results-wrapper {
     font-family: 'Poppins';
-    height: 60vh;
+    height: 70vh;
     overflow: auto;
 }

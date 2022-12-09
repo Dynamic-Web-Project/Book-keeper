@@ -1,30 +1,24 @@
 import { API_KEY } from "./apiConfig";
 
-const API_HOST = 'https://price-analytics.p.rapidapi.com';
+const API_HOST = 'price-analytics.p.rapidapi.com';
 
 function treatHTTPResponse(response) {
     if (response.status !== 200) throw new Error("API problem " + response.status);
     return response.json();
 }
 
-function transformResult(params) {
-    console.log("transformed: " + params.results);
-    return params.results;
-}
-
 export function getProduct(job_id) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': API_KEY,
+            'X-RapidAPI-Host': API_HOST
+        }
+    }
+
     return (
-        fetch(API_HOST + '/poll-job/' + job_id,
-            {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': API_KEY,
-                    'X-RapidAPI-Host': API_HOST
-                }
-            }
-        )
+        fetch('https://' + API_HOST + '/poll-job/' + job_id, options)
             .then(treatHTTPResponse)
-            .then(transformResult)
     )
 }
 
@@ -42,12 +36,10 @@ export function searchProduct(searchParams) {
             'X-RapidAPI-Host': API_HOST
         },
         body: encodedParams
-    };
+    }
 
     return (
-        fetch('https://price-analytics.p.rapidapi.com/search-by-term', options)
+        fetch('https://' + API_HOST + '/search-by-term', options)
             .then(treatHTTPResponse)
-            .then(transformResult)
     )
-
 }

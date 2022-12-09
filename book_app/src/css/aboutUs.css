@@ -1,6 +1,25 @@
-.about-section {
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+.about-us-wrapper {
     padding: 50px;
     width: 100%;
     height: 100%;
-    background-color: black;
+    font-family: 'Poppins';
+}
+
+.about-us-wrapper .top-header {
+    font-size: 35px;
+    text-align: center;
+}
+
+.about-us-wrapper .top-text {
+    text-align: justify;
+}
+
+.about-us-wrapper .member-info {
+    text-align: center;
+}
+
+.about-us-wrapper .bottom-text {
+    text-align: right;
 }

@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+.home-form-element {
+    font-family: 'Poppins';
+}
+
 .form-control:focus,
 .form-select:focus,
 .btn.btn-primary:focus {

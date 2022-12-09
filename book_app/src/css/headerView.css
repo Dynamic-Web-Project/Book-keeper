@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
 .logo Image {
     height: 30px;
     width: auto;
+}
+
+#basic-nav-dropdown {
+    color: rgba(255, 255, 255, calc(4/5));
+}
+
+#basic-nav-dropdown:hover {
+    color: rgb(255, 255, 255);
+}
+
+.navbar {
+    background-color: #bdc099;
+    font-size: larger;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 @media screen and (max-width: 500px) {

@@ -1,6 +1,6 @@
 import Loading from "./Loading";
 import '../css/loginView.css';
-import backgroundimage from '../backgroundimage.jpg'
+import backgroundimage from '../backgroundimage.jpg';
 
 export default function LoginView(props) {
     function handleErrorMessage(error) {

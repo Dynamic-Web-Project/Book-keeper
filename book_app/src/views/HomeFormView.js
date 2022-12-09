@@ -13,18 +13,17 @@ export default function HomeFormView(props) {
     function typeOnChange(event) { props.setType(event.target.value) }
     function inputOnChange(event) { props.setDesc(event.target.value) }
     function numberOnChange(event) { props.setNumber(event.target.value) }
-    function searchInputOnChange(event) { props.setSearch(event.target.value) }
 
     return (
         <div className="home-form-wrapper">
             {handleErrorMessage(props.error)}
             {props.loading && <Loading />}
             <Row className="align-items-center">
-                <Col sm={8}>
+                <Col>
                     <Form onSubmit={props.handleSubmit} className="home-form">
                         <Row className="align-items-center">
                             {/* Date selector */}
-                            <Col sm={3} className="my-1 home-form-element">
+                            <Col sm={2} className="my-1 home-form-element">
                                 <DatePicker
                                     required
                                     selected={props.date}
@@ -75,26 +74,10 @@ export default function HomeFormView(props) {
                             <Col sm={1} className="my-1 home-form-element">
                                 <Button type="submit">Add</Button>
                             </Col>
-                        </Row>
-                    </Form>
-                </Col>
-
-                <Col sm={4}>
-                    <Form onSubmit={props.handleSearch} className="home-form">
-                        <Row className="align-items-center">
-                            {/* Search input */}
-                            <Col sm={7} className="my-1 home-form-element">
-                                <FormControl
-                                    required
-                                    placeholder="Search products"
-                                    value={props.search}
-                                    onChange={searchInputOnChange}
-                                />
-                            </Col>
 
                             {/* Search-button */}
-                            <Col sm={3} className="my-1 home-form-element">
-                                <Button type="submit">Search</Button>
+                            <Col sm={1} className="my-1 home-form-element">
+                                <Button href="/search">Search</Button>
                             </Col>
                         </Row>
                     </Form>

@@ -2,19 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
-import { searchProduct, getProduct } from "../priceAnalyticsAPI";
-import productConst from "../productConst"; /* Mocked JSON data */
 import HomePanelView from "../views/HomePanelView";
 import HomeFormView from "../views/HomeFormView";
 import HomeListView from "../views/HomeListView";
-import HomeSearchView from "../views/HomeSearchView";
 
 export default function Home() {
     const [date, setDate] = React.useState();
     const [type, setType] = React.useState();
     const [desc, setDesc] = React.useState('');
     const [number, setNumber] = React.useState('');
-    const [search, setSearch] = React.useState('');
 
     const [income, setIncome] = React.useState();
     const [expense, setExpense] = React.useState();
@@ -22,11 +18,8 @@ export default function Home() {
 
     const [records, setRecords] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
-    const [show, setShow] = React.useState(true);
 
     const navigate = useNavigate();
-
-    async function toggleShow() { setShow(!show); }
 
     /* Make sure to refresh when user is loaded */
     const { currentUser } = auth;
@@ -95,72 +88,38 @@ export default function Home() {
         catch (error) { console.log(error); }
     }
 
-    let searchResponse, response;
-    // let response = productConst[0].results[0].content.offers;
-    /* Search submission button handler */
-    async function handleSearch(event) {
-        event.preventDefault();
-        if (search === '') { return; }
-        if (!currentUser) { navigate("/login"); }
-
-        toggleShow();
-        console.log(response);
-
-        try {
-            searchResponse = await searchProduct(search);
-            response = await getProduct(searchResponse.job_id);
-
-            console.log("Searching for " + search + " now.");
-            console.log("searchResponse: " + searchResponse);
-            console.log("response: " + response);
-        } catch (error) {
-            console.log("try catch failed: " + error)
-        }
-    }
-    // const [results, setResults] = React.useState(productConst.results[0].content);
-
     if (currentUser) {
         return (
-            show ? (
-                <div className='home-wrapper'>
-                    <HomePanelView
-                        income={income}
-                        expense={expense}
-                        balance={balance}
-                    />
-                    <hr />
-                    <HomeFormView
-                        date={date}
-                        setDate={setDate}
-
-                        type={type}
-                        setType={setType}
-
-                        desc={desc}
-                        setDesc={setDesc}
-
-                        number={number}
-                        setNumber={setNumber}
-
-                        search={search}
-                        setSearch={setSearch}
-
-                        handleSubmit={handleSubmit}
-                        handleSearch={handleSearch}
-                    />
-                    <hr />
-                    <HomeListView
-                        loading={loading}
-                        records={records}
-
-                        handleDelete={handleDelete}
-                    />
-                </div>
-            ) : (
-                <HomeSearchView
-                    response={response}
+            <div className='home-wrapper'>
+                <HomePanelView
+                    income={income}
+                    expense={expense}
+                    balance={balance}
                 />
-            )
+                <hr />
+                <HomeFormView
+                    date={date}
+                    setDate={setDate}
+
+                    type={type}
+                    setType={setType}
+
+                    desc={desc}
+                    setDesc={setDesc}
+
+                    number={number}
+                    setNumber={setNumber}
+
+                    handleSubmit={handleSubmit}
+                />
+                <hr />
+                <HomeListView
+                    loading={loading}
+                    records={records}
+
+                    handleDelete={handleDelete}
+                />
+            </div>
         )
     }
 }
