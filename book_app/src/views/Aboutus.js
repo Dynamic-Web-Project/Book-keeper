@@ -39,7 +39,7 @@ export default () => {
                     <Card.Img variant="top" src={icon4} />
                     <Card.Header>Peter Li</Card.Header>
                     <Card.Body>
-                        <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
+                        <a href="https://www.linkedin.com/in/peter-yuanzong-li-33601818a" target="_blank" rel="noreferrer">
                             <FaLinkedin size={30} />
                         </a>
                     </Card.Body>
