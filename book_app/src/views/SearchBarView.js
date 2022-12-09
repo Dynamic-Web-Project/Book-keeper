@@ -1,6 +1,7 @@
 import Loading from "./Loading";
 import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
 import '../css/searchBarView.css';
+import "../css/common.css";
 
 export default function SearchBar(props) {
     function handleErrorMessage(error) {

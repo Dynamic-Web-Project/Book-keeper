@@ -1,5 +1,6 @@
 import Loading from "./Loading";
 import '../css/signupView.css';
+import "../css/common.css";
 import backgroundimage from '../backgroundimage.jpg'
 
 export default function SignupView(props) {

@@ -2,6 +2,7 @@ import React from 'react'
 import { FaDiscord, FaGithub, FaLinkedin, FaMailBulk } from "react-icons/fa";
 import { Card, CardGroup } from "react-bootstrap";
 import "../css/aboutUs.css";
+import "../css/common.css";
 
 export default () => {
     return (

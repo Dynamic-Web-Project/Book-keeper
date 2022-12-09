@@ -1,6 +1,7 @@
 import Loading from "./Loading";
 import { Table } from "react-bootstrap";
 import '../css/homeListView.css';
+import "../css/common.css";
 
 var deleteItem;
 function HomeListView(props) {

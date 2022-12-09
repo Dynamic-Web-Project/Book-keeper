@@ -1,6 +1,7 @@
 import Loading from "./Loading";
 import { Table } from "react-bootstrap";
 import '../css/searchResultsView.css';
+import "../css/common.css";
 
 export default function SearchResults(props) {
     function handleErrorMessage(error) {

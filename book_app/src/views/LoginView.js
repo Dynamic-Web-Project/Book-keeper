@@ -1,5 +1,6 @@
 import Loading from "./Loading";
 import '../css/loginView.css';
+import "../css/common.css";
 import backgroundimage from '../backgroundimage.jpg';
 
 export default function LoginView(props) {
