@@ -27,14 +27,21 @@ export default function SearchResults(props) {
                 )
             }
             return (response.map(renderTable))
+        } else if (props.loading) {
+            return (
+                <tr>
+                    <td>Searching, please wait!</td>
+                </tr>
+            )
         } else {
             return (
                 <tr>
-                    <td>No results. Please try again...</td>
+                    <td>No results.</td>
                 </tr>
             )
         }
     }
+
 
     return (
         <div className="search-results-wrapper">
