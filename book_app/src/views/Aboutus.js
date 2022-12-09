@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaDiscord, FaGithub, FaLinkedin, FaMailBulk } from "react-icons/fa";
+import { FaDiscord, FaEnvelope, FaGithub, FaLinkedin, FaMailBulk } from "react-icons/fa";
 import { Card, CardGroup } from "react-bootstrap";
 import "../css/aboutUs.css";
 import "../css/common.css";
@@ -73,12 +73,16 @@ export default () => {
                     </a>
                 </Card>
                 <Card border="light">
-                    <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
+                    <a href="https://discord.gg/MbkhTkEHBV" target="_blank" rel="noreferrer">
                         <FaDiscord size={40} />
                     </a>
                 </Card>
+                <Card border="light">
+                    <a href="mailto:bookkeeper.kthproject@gmail.com" target="_blank" rel="noreferrer">
+                        <FaEnvelope size={40} />
+                    </a>
+                </Card>
             </CardGroup>
-
             <hr />
 
             <CardGroup>
