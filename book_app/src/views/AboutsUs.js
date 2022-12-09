@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaDiscord, FaEnvelope, FaGithub, FaLinkedin, FaMailBulk } from "react-icons/fa";
+import { FaDiscord, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Card, CardGroup } from "react-bootstrap";
 import "../css/aboutUs.css";
 import "../css/common.css";

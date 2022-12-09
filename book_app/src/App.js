@@ -7,7 +7,7 @@ import Login from "../src/presenters/LoginPresenter";
 import Signup from "../src/presenters/SignupPresenter";
 import Home from "../src/presenters/HomePresenter";
 import Search from "../src/presenters/SearchPresenter";
-import About from './views/Aboutus';
+import About from './views/AboutUs';
 
 class App extends React.Component {
     render() {

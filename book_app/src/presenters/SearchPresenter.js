@@ -38,6 +38,7 @@ export default function Search() {
             const searchProductResponse = await searchProduct(searchQuery);
             console.log("searchResponse job_id: " + searchProductResponse.job_id);
             console.log("searchResponse stringify: " + JSON.stringify(searchProductResponse));
+            await waitFor(30000);
 
             let getProductResponse;
             for (let i = 0; i < 3; i++) {
@@ -50,7 +51,6 @@ export default function Search() {
                     setLoading(false);
                     break;
                 }
-
                 await waitFor(10000);
             }
             setLoading(false);
