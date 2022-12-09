@@ -18,15 +18,19 @@
     text-align: center;
 }
 
-.about-us-wrapper .bottom-text {
-    text-align: right;
+.about-us-wrapper .contact-info {
+    text-align: center;
 }
 
-a{
+.about-us-wrapper .bottom-text {
+    text-align: center;
+}
+
+.about-us-wrapper a {
     color: black;
 }
 
 /* selected link */
-a:active {
-    color: black;
+.about-us-wrapper a:hover {
+    color: rgb(100, 100, 100);
 }

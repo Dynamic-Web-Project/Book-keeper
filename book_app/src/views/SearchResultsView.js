@@ -27,6 +27,12 @@ export default function SearchResults(props) {
                 )
             }
             return (response.map(renderTable))
+        } else {
+            return (
+                <tr>
+                    <td>No results. Please try again...</td>
+                </tr>
+            )
         }
     }
 

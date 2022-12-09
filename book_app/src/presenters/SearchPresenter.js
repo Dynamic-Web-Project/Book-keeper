@@ -8,7 +8,7 @@ import SearchResultsView from "../views/SearchResultsView";
 
 export default function Search() {
     const [searchQuery, setSearchQuery] = React.useState('');
-    const [response, setResponse] = React.useState();
+    const [response, setResponse] = React.useState(null);
     const [loading, setLoading] = React.useState();
 
     const navigate = useNavigate();

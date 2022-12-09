@@ -66,7 +66,7 @@ export default () => {
 
             <hr />
 
-            <CardGroup style={{ textAlign: 'center' }}>
+            <CardGroup className="contact-info">
                 <Card border="light">
                     <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
                         <FaGithub size={40} />
@@ -88,7 +88,7 @@ export default () => {
             <CardGroup>
                 <Card border="light">
                     <Card.Body>
-                        <Card.Text className="bottom-text" style={{ textAlign: 'center' }}>
+                        <Card.Text className="bottom-text">
                             A project group from KTH in the course DH2642.
                             <br></br>
                             ©All rights reserved.
