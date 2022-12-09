@@ -13,9 +13,9 @@ export default function LoginView(props) {
 
     return (
         <div className="login-wrapper">
-            <img src={backgroundimage} alt="background" />
+            <img className="blackgroundPic"src={backgroundimage} alt="background" />
             <div className="login">
-                <h1 style={{ color: 'white' }}>Login</h1>
+                <h1 className="LoginANDSignup">Login</h1>
                 {handleErrorMessage(props.error)}
                 {props.loading && <Loading />}
                 <form onSubmit={props.handleSubmit}>

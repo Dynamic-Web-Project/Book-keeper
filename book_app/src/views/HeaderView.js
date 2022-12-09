@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
-import logo from "../logo.gif";
+import logo from "../pictures/logo.gif";
 import '../css/headerView.css';
 import "../css/common.css";
 

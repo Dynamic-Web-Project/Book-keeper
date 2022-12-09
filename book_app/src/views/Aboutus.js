@@ -3,6 +3,10 @@ import { FaDiscord, FaGithub, FaLinkedin, FaMailBulk } from "react-icons/fa";
 import { Card, CardGroup } from "react-bootstrap";
 import "../css/aboutUs.css";
 import "../css/common.css";
+import icon1 from "../pictures/peopleIcon1.png";
+import icon2 from "../pictures/peopleIcon2.png";
+import icon3 from "../pictures/peopleIcon3.png";
+import icon4 from "../pictures/peopleIcon4.png";
 
 export default () => {
     return (
@@ -23,38 +27,38 @@ export default () => {
 
             <CardGroup className="member-info">
                 <Card>
-                    <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
+                    <Card.Img variant="top" src={icon1} />
                     <Card.Header>Ruimin Ma</Card.Header>
                     <Card.Body>
-                        <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                            <FaLinkedin size={40} />
+                        <a href="https://www.linkedin.com/in/ruimin-ma/" target="_blank" rel="noreferrer">
+                            <FaLinkedin size={30} />
                         </a>
                     </Card.Body>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
+                    <Card.Img variant="top" src={icon4} />
                     <Card.Header>Peter Li</Card.Header>
                     <Card.Body>
                         <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                            <FaLinkedin size={40} />
+                            <FaLinkedin size={30} />
                         </a>
                     </Card.Body>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
-                    <Card.Header>Jingting Zhang</Card.Header>
+                    <Card.Img variant="top" src={icon3} />
+                    <Card.Header>Jinting Zhang</Card.Header>
                     <Card.Body>
-                        <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                            <FaLinkedin size={40} />
+                        <a href="https://www.linkedin.com/in/jinting-zhang-8b140721a" target="_blank" rel="noreferrer">
+                            <FaLinkedin size={30} />
                         </a>
                     </Card.Body>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
+                    <Card.Img variant="top" src={icon2} />
                     <Card.Header>Duosi Dai</Card.Header>
                     <Card.Body>
-                        <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                            <FaLinkedin size={40} />
+                        <a href="https://www.linkedin.com/in/duosi-dai-964218225/" target="_blank" rel="noreferrer">
+                            <FaLinkedin size={30} />
                         </a>
                     </Card.Body>
                 </Card>
@@ -63,19 +67,14 @@ export default () => {
             <hr />
 
             <CardGroup style={{ textAlign: 'center' }}>
-                <Card >
+                <Card border="light">
                     <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
                         <FaGithub size={40} />
                     </a>
                 </Card>
-                <Card>
+                <Card border="light">
                     <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
                         <FaDiscord size={40} />
-                    </a>
-                </Card>
-                <Card >
-                    <a href="https://github.com/Dynamic-Web-Project/Book-keeper" target="_blank" rel="noreferrer">
-                        <FaMailBulk size={40} />
                     </a>
                 </Card>
             </CardGroup>
@@ -83,9 +82,9 @@ export default () => {
             <hr />
 
             <CardGroup>
-                <Card>
+                <Card border="light">
                     <Card.Body>
-                        <Card.Text className="bottom-text">
+                        <Card.Text className="bottom-text" style={{ textAlign: 'center' }}>
                             A project group from KTH in the course DH2642.
                             <br></br>
                             ©All rights reserved.

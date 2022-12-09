@@ -14,9 +14,9 @@ export default function SignupView(props) {
 
     return (
         <div className="signup-wrapper">
-            <img src={backgroundimage} alt="background" />
+            <img className="blackgroundPic"src={backgroundimage} alt="background" />
             <div className="signup">
-                <h1 style={{ color: 'white' }}>Sign Up </h1>
+                <h1 className="LoginANDSignup" style={{ color: 'white'}}>Sign Up </h1>
                 {handleErrorMessage(props.error)}
                 {props.loading && <Loading />}
                 <form onSubmit={props.handleSubmit}>

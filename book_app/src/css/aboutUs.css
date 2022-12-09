@@ -21,3 +21,12 @@
 .about-us-wrapper .bottom-text {
     text-align: right;
 }
+
+a{
+    color: black;
+}
+
+/* selected link */
+a:active {
+    color: black;
+}
