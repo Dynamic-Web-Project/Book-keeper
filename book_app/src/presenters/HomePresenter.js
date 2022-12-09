@@ -76,7 +76,6 @@ export default function Home() {
             })
             setDesc('');
             setNumber('');
-            setDate('');
         } catch (error) { console.log(error); }
     }
 

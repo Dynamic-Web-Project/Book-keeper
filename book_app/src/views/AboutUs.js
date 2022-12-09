@@ -3,10 +3,10 @@ import { FaDiscord, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Card, CardGroup } from "react-bootstrap";
 import "../css/aboutUs.css";
 import "../css/common.css";
-import icon1 from "../pictures/peopleIcon1.png";
-import icon2 from "../pictures/peopleIcon2.png";
-import icon3 from "../pictures/peopleIcon3.png";
-import icon4 from "../pictures/peopleIcon4.png";
+import icon1 from "../imgs/peopleIcon1.png";
+import icon2 from "../imgs/peopleIcon2.png";
+import icon3 from "../imgs/peopleIcon3.png";
+import icon4 from "../imgs/peopleIcon4.png";
 
 export default () => {
     return (
