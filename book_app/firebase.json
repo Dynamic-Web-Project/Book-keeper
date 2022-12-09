@@ -1,6 +1,5 @@
 {
     "hosting": {
-        "target": "bookkeeper-kth",
         "public": "build",
         "ignore": [
             "firebase.json",
