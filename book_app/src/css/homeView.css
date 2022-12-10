@@ -49,6 +49,31 @@
 
 /* List */
 .home-list-wrapper {
-    height: 60vh;
+    height: 55vh;
     overflow: auto;
+}
+
+.home-list-wrapper .table-row {
+    vertical-align: middle;
+}
+
+.home-list-wrapper .table-data-date {
+    width: 115px;
+}
+
+.home-list-wrapper .table-data-type {
+    width: 0;
+}
+
+.home-list-wrapper .table-data-description {
+    width: fit-content;
+}
+
+.home-list-wrapper .table-data-number {
+    width: 150px;
+    text-align: right;
+}
+
+.home-list-wrapper .table-data-delete {
+    width: 0;
 }

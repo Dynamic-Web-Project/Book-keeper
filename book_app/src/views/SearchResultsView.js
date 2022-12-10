@@ -26,10 +26,10 @@ export default function SearchResults(props) {
                 }
 
                 return (
-                    <tr key={item.url}>
+                    <tr key={item.url} className="table-row">
                         <td><a href={item.url}>{item.name}</a></td>
                         <td className="result-price">{checkPriceType(item.price)}</td>
-                        <td><Button className="button" id={item.name} onClick={addProductToWishList(item)}>×</Button></td>
+                        <td><Button className="button" id={item.name} onClick={addProductToWishList(item)}>+</Button></td>
                     </tr>
                 )
             }
@@ -37,17 +37,13 @@ export default function SearchResults(props) {
         } else if (props.loading) {
             return (
                 <tr>
-                    <td>Searching, please wait!</td>
-                    <td></td>
-                    <td></td>
+                    <td colSpan={3}>Searching, please wait!</td>
                 </tr>
             )
         } else {
             return (
                 <tr>
-                    <td>No results.</td>
-                    <td></td>
-                    <td></td>
+                    <td colSpan={3}>No results.</td>
                 </tr>
             )
         }
@@ -62,8 +58,8 @@ export default function SearchResults(props) {
                 <thead>
                     <tr>
                         <th>Product Name</th>
-                        <th>Price</th>
-                        <th></th>
+                        <th className="table-price-column">Price</th>
+                        <th className="table-function-column"></th>
                     </tr>
                 </thead>
                 <tbody>

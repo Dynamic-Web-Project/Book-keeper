@@ -19,12 +19,13 @@ export default function HomeFormView(props) {
         <div className="home-form-wrapper">
             {handleErrorMessage(props.error)}
             {props.loading && <Loading />}
+            <p>Add your income and expenses here. Want to search for a product and compare their prices? Click the Search products button!</p>
             <Row className="align-items-center">
                 <Col>
                     <Form onSubmit={props.handleSubmit} className="home-form">
                         <Row className="align-items-center">
                             {/* Date selector */}
-                            <Col sm={2} className="my-1 home-form-element">
+                            <Col md="auto" className="my-1 home-form-element">
                                 <DatePicker
                                     required
                                     selected={props.date}
@@ -38,7 +39,7 @@ export default function HomeFormView(props) {
                             </Col>
 
                             {/* Income / Expense selector */}
-                            <Col sm={2} className="my-1 home-form-element">
+                            <Col md="auto" className="my-1 home-form-element">
                                 <Form.Select
                                     required
                                     value={props.type}
@@ -51,7 +52,7 @@ export default function HomeFormView(props) {
                             </Col>
 
                             {/* Description input */}
-                            <Col sm={3} className="my-1 home-form-element">
+                            <Col md="auto" className="my-1 home-form-element">
                                 <FormControl
                                     required
                                     placeholder="Description"
@@ -61,7 +62,7 @@ export default function HomeFormView(props) {
                             </Col>
 
                             {/* Number input */}
-                            <Col sm={2} className="my-1 home-form-element">
+                            <Col md="auto" className="my-1 home-form-element">
                                 <FormControl
                                     required
                                     placeholder="Amount"
@@ -72,13 +73,13 @@ export default function HomeFormView(props) {
                             </Col>
 
                             {/* Add-button */}
-                            <Col sm={1} className="my-1 home-form-element">
-                                <Button className="button" type="submit">Add</Button>
+                            <Col md="auto" className="my-1 home-form-element">
+                                <Button className="button" type="submit">Add to records</Button>
                             </Col>
 
                             {/* Search-button */}
-                            <Col sm={2} className="my-1 home-form-element">
-                                <Button className="button" href="/search">Search Products</Button>
+                            <Col md="auto" className="my-1 home-form-element">
+                                <Button className="button" href="/search">Search products</Button>
                             </Col>
                         </Row>
                     </Form>

@@ -22,7 +22,7 @@ export default function Search() {
     }
     React.useEffect(userStateChanged, []);
 
-    /* Search submission button handler */
+    /* Search submission button handler */ /*
     async function handleSearch(event) {
         event.preventDefault();
         if (searchQuery === '') { return; }
@@ -57,9 +57,19 @@ export default function Search() {
             console.log("try catch failed: " + error);
             setLoading(false);
         }
+    } */
+
+    /* Using mock data */
+    async function handleSearch(event) {
+        event.preventDefault();
+        if (searchQuery === '') { return; }
+        if (!currentUser) { navigate("/login"); }
+        setLoading(true);
+
+        setResponse(productConst[0].results[0].content.offers);
+
+        setLoading(false);
     }
-    // let response = productConst[0].results[0].content.offers;
-    // const [results, setResults] = React.useState(productConst.results[0].content);
 
     if (currentUser) {
         if (response) {
@@ -76,6 +86,7 @@ export default function Search() {
                         loading={loading}
                         response={response}
                     />
+                    <p className="search-wish-list-tip">Any products caught your interest? Press the '+' button to add to your wish list!</p>
                 </div>
             )
         } else {

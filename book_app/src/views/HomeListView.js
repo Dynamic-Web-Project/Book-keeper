@@ -11,12 +11,12 @@ function HomeListView(props) {
     function renderList(array) {
         function listRow(data) {
             return (
-                <tr key={data.id}>
-                    <td>{data.date.toDate().toString().substr(4, 11)}</td>
-                    <td>{data.type}</td>
-                    <td>{data.desc}</td>
-                    <td>{data.number}</td>
-                    <td><Button className="button" id={data.id} onClick={props.handleDelete}>×</Button></td>
+                <tr key={data.id} className="table-row">
+                    <td className="table-data-date">{data.date.toDate().toString().substr(4, 11)}</td>
+                    <td className="table-data-type">{data.type}</td>
+                    <td className="table-data-description">{data.desc}</td>
+                    <td className="table-data-number">{data.number}</td>
+                    <td className="table-data-delete"><Button className="button" id={data.id} onClick={props.handleDelete}>×</Button></td>
                 </tr>
             )
         }
