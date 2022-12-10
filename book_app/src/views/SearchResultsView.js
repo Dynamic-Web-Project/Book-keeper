@@ -4,32 +4,32 @@ import '../css/searchView.css';
 import "../css/common.css";
 
 export default function SearchResults(props) {
-    function handleErrorMessage(error) {
-        if (error) return <div className="errorMessage"><span>{props.error}</span></div>;
-    }
-
     function renderResults(response) {
-        // arr.map(func1).map(func2)
         if (response) {
             function renderTable(item) {
                 /* If the price contains description-like content, do not show currency */
-                function checkPriceType(string) {
-                    if (/^(\d+,)*(\d+.)*(\d+)$/.test(string)) { return item.price + " " + item.currency }
-                    else if (string === null) { return "Unavailable" }
-                    else { return string }
+                function checkPriceType(itemType) {
+                    if (itemType === 0) { return "Free" }
+                    if (/^(\d+,)*(\d+.)*(\d+)$/.test(itemType)) { return itemType + " " + item.currency }
+                    else if (itemType === null) { return "Unavailable" }
+                    else { return itemType }
                 }
 
-                /* Adds selected product to wish list */
-                function addProductToWishList(item) {
-                    // item.handleAdd;
-                    return 0;
+                /* Takes the item's name, URL and price, then add to the wish list, also triggers styling changes */
+                function addToWishList(item) {
+                    let elementId = document.getElementById(item.url);
+                    elementId.disabled = true;
+                    elementId.innerHTML = "✓";
+                    props.handleSubmit(item.name, item.url, item.seller, item.shipping, item.price)
                 }
 
                 return (
                     <tr key={item.url} className="table-row">
                         <td><a href={item.url}>{item.name}</a></td>
+                        <td className="result-seller">{item.seller}</td>
                         <td className="result-price">{checkPriceType(item.price)}</td>
-                        <td><Button className="button" id={item.name} onClick={addProductToWishList(item)}>+</Button></td>
+                        <td className="result-shipping">{checkPriceType(item.shipping)}</td>
+                        {item.url && <td><Button className="button" id={item.url} onClick={() => addToWishList(item)}>+</Button></td>}
                     </tr>
                 )
             }
@@ -37,28 +37,27 @@ export default function SearchResults(props) {
         } else if (props.loading) {
             return (
                 <tr>
-                    <td colSpan={3}>Searching, please wait!</td>
+                    <td colSpan={5}>{props.loading && <Loading />} Searching, please wait! {props.resultsLoadingProgress} completed...</td>
                 </tr>
             )
         } else {
             return (
                 <tr>
-                    <td colSpan={3}>No results.</td>
+                    <td colSpan={5}>No results. Please initiate a search!</td>
                 </tr>
             )
         }
     }
 
-
     return (
         <div className="search-results-wrapper">
-            {handleErrorMessage(props.error)}
-            {props.loading && <Loading />}
             <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>Product Name</th>
+                        <th className="table-seller-column">Seller</th>
                         <th className="table-price-column">Price</th>
+                        <th className="table-Shipping-column">Shipping</th>
                         <th className="table-function-column"></th>
                     </tr>
                 </thead>

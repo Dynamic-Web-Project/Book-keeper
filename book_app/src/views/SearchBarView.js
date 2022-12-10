@@ -1,25 +1,19 @@
-import Loading from "./Loading";
 import { Form, Row, Col, FormControl, Button } from "react-bootstrap";
 import '../css/searchView.css';
 import "../css/common.css";
 
 export default function SearchBar(props) {
-    function handleErrorMessage(error) {
-        if (error) return <div className="errorMessage"><span style={{ color: "white" }}>{props.error}</span></div>;
-    }
-
+    function searchProduct(event) { props.handleSearch(event) }
     function searchInputOnChange(event) { props.setSearchQuery(event.target.value) }
 
     return (
         <div className="search-bar-wrapper">
-            {handleErrorMessage(props.error)}
-            {props.loading && <Loading />}
             <Row className="align-items-center">
                 <Col>
-                    <Form onSubmit={props.handleSearch} className="search-bar">
+                    <Form onSubmit={searchProduct} className="search-bar">
                         <Row className="align-items-center">
                             {/* Search input */}
-                            <Col sm={7} className="my-1 home-form-element">
+                            <Col sm={8} className="my-1 home-form-element">
                                 <FormControl
                                     required
                                     placeholder="Search products"
@@ -29,14 +23,19 @@ export default function SearchBar(props) {
                             </Col>
 
                             {/* Search-button */}
-                            <Col sm={3} className="my-1 home-form-element">
+                            <Col md="auto" className="my-1 home-form-element">
                                 <Button className="button" type="submit">Search</Button>
+                            </Col>
+
+                            {/* Wish List-button */}
+                            <Col md="auto" className="my-1 home-form-element">
+                                <Button className="button" href="/wishlist">Wish list</Button>
                             </Col>
                         </Row>
                     </Form>
                 </Col>
             </Row>
-            <p className="search-info">Searches can take from 30 seconds to 1 minute, please be patient. For now, please open the links in New Tab.</p>
+            <p className="search-info">Searches can take from 30 seconds to 1 minute, please be patient. For now, please open the links in new tab (middle or right click).</p>
         </div>
     );
 }

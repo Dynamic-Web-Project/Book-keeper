@@ -36,12 +36,31 @@
     vertical-align: middle;
 }
 
+.search-results-wrapper a {
+    color: black;
+}
+
+.search-results-wrapper a:hover {
+    color: rgb(177, 176, 176);
+}
+
+.search-results-wrapper a:link,
+.search-results-wrapper a:visited,
+.search-results-wrapper a:hover,
+.search-results-wrapper a:active {
+    text-decoration: none;
+}
+
 .search-results-wrapper .table-price-column {
     width: 150px;
 }
 
 .search-results-wrapper .result-price {
     width: 150px;
+    text-align: right;
+}
+
+.search-results-wrapper .result-shipping {
     text-align: right;
 }
 
