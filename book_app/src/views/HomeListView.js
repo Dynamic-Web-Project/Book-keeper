@@ -20,13 +20,21 @@ export default function HomeListView(props) {
                 </tr>
             )
         }
-        return array.records.map(listRow);
+
+        if (props.loading) {
+            return (
+                <tr>
+                    <td colSpan={5}>{props.loading && <Loading />}</td>
+                </tr>
+            )
+        } else {
+            return (array.records.map(listRow))
+        }
     }
 
     return (
         <div className="home-list-wrapper">
             {handleErrorMessage(props.error)}
-            {props.loading && <Loading />}
             <Table striped bordered hover className="home-list">
                 <thead>
                     <tr>
@@ -42,5 +50,5 @@ export default function HomeListView(props) {
                 </tbody>
             </Table>
         </div>
-    );
+    )
 }

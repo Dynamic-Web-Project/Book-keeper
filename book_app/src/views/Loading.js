@@ -10,5 +10,5 @@ export default function Loader() {
         >
             <span className="visually-hidden"> Loading.. </span>
         </Spinner>
-    );
+    )
 }

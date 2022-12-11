@@ -39,5 +39,5 @@ export default function HeaderView(props) {
                 </Container>
             </Navbar >
         </div >
-    );
+    )
 }

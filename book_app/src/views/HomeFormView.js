@@ -86,5 +86,5 @@ export default function HomeFormView(props) {
                 </Col>
             </Row>
         </div >
-    );
+    )
 }

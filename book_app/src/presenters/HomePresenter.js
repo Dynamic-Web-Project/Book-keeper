@@ -91,6 +91,8 @@ export default function Home() {
         return (
             <div className='home-wrapper'>
                 <HomePanelView
+                    loading={loading}
+
                     income={income}
                     expense={expense}
                     balance={balance}

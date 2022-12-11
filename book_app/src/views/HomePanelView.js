@@ -15,7 +15,7 @@ export default function HomePanelView(props) {
                 <Card className={headerText}>
                     <Card.Header>{headerText}</Card.Header>
                     <Card.Body>
-                        <Card.Text>{cardText}</Card.Text>
+                        <Card.Text>{(props.loading && <Loading />) || cardText}</Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
@@ -25,12 +25,11 @@ export default function HomePanelView(props) {
     return (
         <div className="home-panel-wrapper">
             {handleErrorMessage(props.error)}
-            {props.loading && <Loading />}
             <Row className="home-panel">
                 {renderCard("Income", props.income)}
                 {renderCard("Expense", props.expense)}
                 {renderCard("Balance", props.balance)}
             </Row>
         </div>
-    );
+    )
 }

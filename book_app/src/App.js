@@ -10,7 +10,7 @@ import Search from "../src/presenters/SearchPresenter";
 import Wishlist from "../src/presenters/WishlistPresenter";
 import About from './views/AboutUs';
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <Router>
@@ -30,5 +30,3 @@ class App extends React.Component {
         )
     }
 }
-
-export default App;

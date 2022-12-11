@@ -37,5 +37,5 @@ export default function SearchBar(props) {
             </Row>
             <p className="search-info">Searches can take from 30 seconds to 1 minute, please be patient. For now, please open the links in new tab (middle or right click).</p>
         </div>
-    );
+    )
 }
