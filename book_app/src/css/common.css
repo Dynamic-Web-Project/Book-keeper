@@ -9,3 +9,7 @@
 .errorMessage span {
     color: "white";
 }
+
+.loader {
+    vertical-align: middle;
+}

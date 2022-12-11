@@ -29,21 +29,18 @@ export default function SearchResults(props) {
                         <td className="result-seller">{item.seller}</td>
                         <td className="result-price">{checkPriceType(item.price)}</td>
                         <td className="result-shipping">{checkPriceType(item.shipping)}</td>
-                        {item.url && <td><Button className="button" id={item.url} onClick={() => addToWishList(item)}>+</Button></td>}
+                        {item.url ? <td><Button className="button" id={item.url} onClick={() => addToWishList(item)}>+</Button></td> : <td></td>}
                     </tr>
                 )
             }
             return (response.map(renderTable))
-        } else if (props.loading) {
-            return (
-                <tr>
-                    <td colSpan={5}>{props.loading && <Loading />} Searching, please wait! {props.resultsLoadingProgress} completed...</td>
-                </tr>
-            )
         } else {
             return (
                 <tr>
-                    <td colSpan={5}>No results. Please initiate a search!</td>
+                    {props.loading ?
+                        <td colSpan={5}>{props.loading && <Loading />} Searching, please wait! {props.resultsLoadingProgress} completed...</td> :
+                        <td colSpan={5}>Please initiate a search!</td>
+                    }
                 </tr>
             )
         }
