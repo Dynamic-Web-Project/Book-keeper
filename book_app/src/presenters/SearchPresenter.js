@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc } from "firebase/firestore";
+import { collection, addDoc, doc } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import { searchProduct, getProduct } from "../priceAnalyticsAPI";
 import productConst from "../productConst"; /* Mocked JSON data */

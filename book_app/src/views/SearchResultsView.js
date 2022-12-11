@@ -63,5 +63,5 @@ export default function SearchResults(props) {
                 </tbody>
             </Table>
         </div>
-    );
+    )
 }

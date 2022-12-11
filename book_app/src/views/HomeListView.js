@@ -3,7 +3,7 @@ import { Table, Button } from "react-bootstrap";
 import '../css/homeView.css';
 import "../css/common.css";
 
-function HomeListView(props) {
+export default function HomeListView(props) {
     function handleErrorMessage(error) {
         if (error) return <div className="errorMessage"><span>{props.error}</span></div>;
     }
@@ -44,4 +44,3 @@ function HomeListView(props) {
         </div>
     );
 }
-export default HomeListView;

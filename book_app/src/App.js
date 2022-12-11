@@ -7,6 +7,7 @@ import Login from "../src/presenters/LoginPresenter";
 import Signup from "../src/presenters/SignupPresenter";
 import Home from "../src/presenters/HomePresenter";
 import Search from "../src/presenters/SearchPresenter";
+import Wishlist from "../src/presenters/WishlistPresenter";
 import About from './views/AboutUs';
 
 class App extends React.Component {
@@ -20,8 +21,9 @@ class App extends React.Component {
                         <Route exact path='/login' element={<Login />} />
                         <Route exact path='/signup' element={<Signup />} />
                         <Route exact path='/aboutus' element={<About />} />
-                        <Route exact path='/search' element={<Search />} />
                         <Route exact path='/home' element={<Home />} />
+                        <Route exact path='/search' element={<Search />} />
+                        <Route exact path='/wishlist' element={<Wishlist />} />
                     </Routes>
                 </Container>
             </Router>
