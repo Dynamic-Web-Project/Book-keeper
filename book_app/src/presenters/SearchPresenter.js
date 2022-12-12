@@ -133,7 +133,7 @@ export default function Search() {
     // }
 
     /* Submit handler, also pushes data to Firebase */
-    async function handleSubmit(name, url, seller, shipping, price) {
+    async function handleSubmit(name, url, seller, shipping, price, currency) {
         if (!currentUser) { navigate("/login"); }
 
         try {
@@ -143,6 +143,7 @@ export default function Search() {
                 seller,
                 shipping,
                 price,
+                currency,
                 user: doc(db, "users", currentUser.uid)
             })
         } catch (error) { console.log(error); }

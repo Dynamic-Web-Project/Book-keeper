@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc, doc, query, where, orderBy, onSnapshot, deleteDoc } from "firebase/firestore";
+import { collection, doc, query, where, onSnapshot, deleteDoc } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import WishlistView from "../views/WishlistView";
 
 export default function Wishlist() {
     const [records, setRecords] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
+
     const navigate = useNavigate();
 
     /* Make sure to refresh when user is loaded */
@@ -21,15 +23,16 @@ export default function Wishlist() {
     function fetchData() {
         async function fetchFromFirebase() {
             if (currentUser) {
-                try{
+                try {
                     const q = query(collection(db, "wishlist"), where("user", "==", doc(db, "users", currentUser.uid)));
                     function snapshot(query) {
                         let data = [];
                         query.forEach((doc) => { data.push({ id: doc.id, ...doc.data() }); });
                         setRecords(data);
+                        setLoading(false);
                     }
                     return onSnapshot(q, snapshot);
-                }catch(error) { console.log(error); }
+                } catch (error) { console.log(error); }
             }
         }
         fetchFromFirebase();
@@ -47,7 +50,9 @@ export default function Wishlist() {
     if (currentUser) {
         return (
             <WishlistView
+                loading={loading}
                 records={records}
+
                 handleDelete={handleDelete}
             />
         )

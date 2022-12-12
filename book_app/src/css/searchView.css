@@ -55,12 +55,12 @@
     width: 150px;
 }
 
-.search-results-wrapper .result-price {
+.search-results-wrapper .table-data-price {
     width: 150px;
     text-align: right;
 }
 
-.search-results-wrapper .result-shipping {
+.search-results-wrapper .table-data-shipping {
     text-align: right;
 }
 

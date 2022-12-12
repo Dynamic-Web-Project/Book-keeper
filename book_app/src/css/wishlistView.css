@@ -2,6 +2,11 @@
     font-family: 'Poppins';
 }
 
+.wishlist-results-wrapper {
+    height: 75vh;
+    overflow: auto;
+}
+
 .wishlist-wrapper .button {
     background-color: rgb(177, 176, 176);
     border-color: rgb(243, 239, 239);
@@ -17,4 +22,41 @@
 .wishlist-wrapper .button:focus {
     border-color: #e7e2f6e6 !important;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
+}
+
+.wishlist-results-wrapper .table-row {
+    vertical-align: middle;
+}
+
+.wishlist-results-wrapper a {
+    color: black;
+}
+
+.wishlist-results-wrapper a:hover {
+    color: rgb(177, 176, 176);
+}
+
+.wishlist-results-wrapper a:link,
+.wishlist-results-wrapper a:visited,
+.wishlist-results-wrapper a:hover,
+.wishlist-results-wrapper a:active {
+    text-decoration: none;
+}
+
+.wishlist-results-wrapper .table-price-column {
+    width: 150px;
+}
+
+.wishlist-results-wrapper .table-data-price {
+    width: 150px;
+    text-align: right;
+}
+
+.wishlist-results-wrapper .table-data-shipping {
+    text-align: right;
+}
+
+.wishlist-results-wrapper .table-function-column {
+    width: 55px;
+    text-align: right;
 }
