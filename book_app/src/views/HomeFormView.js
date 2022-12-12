@@ -34,7 +34,7 @@ export default function HomeFormView(props) {
                                     isClearable
                                     showYearDropdown
                                     className="form-control"
-                                    placeholderText="date"
+                                    placeholderText="Date"
                                 />
                             </Col>
 
