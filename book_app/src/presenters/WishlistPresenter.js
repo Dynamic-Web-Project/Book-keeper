@@ -6,7 +6,6 @@ import WishlistView from "../views/WishlistView";
 
 export default function Wishlist() {
     const [records, setRecords] = React.useState([]);
-
     const navigate = useNavigate();
 
     /* Make sure to refresh when user is loaded */
@@ -22,7 +21,15 @@ export default function Wishlist() {
     function fetchData() {
         async function fetchFromFirebase() {
             if (currentUser) {
-                /* TODO */
+                try{
+                    const q = query(collection(db, "wishlist"), where("user", "==", doc(db, "users", currentUser.uid)));
+                    function snapshot(query) {
+                        let data = [];
+                        query.forEach((doc) => { data.push({ id: doc.id, ...doc.data() }); });
+                        setRecords(data);
+                    }
+                    return onSnapshot(q, snapshot);
+                }catch(error) { console.log(error); }
             }
         }
         fetchFromFirebase();

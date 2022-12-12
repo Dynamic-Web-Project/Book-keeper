@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { collection, addDoc, doc } from "firebase/firestore";
 import { auth, onAuthStateChanged, db } from "../firebaseModel";
 import { searchProduct, getProduct } from "../priceAnalyticsAPI";
-import productConst from "../productConst"; /* Mocked JSON data */
+//import productConst from "../productConst"; /* Mocked JSON data */
 import SearchBarView from "../views/SearchBarView";
 import SearchResultsView from "../views/SearchResultsView";
 
