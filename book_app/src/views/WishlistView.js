@@ -1,5 +1,5 @@
 import Loading from "./Loading";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button,Col } from "react-bootstrap";
 import '../css/wishlistView.css';
 import "../css/common.css";
 
@@ -13,7 +13,7 @@ export default function WishlistView(props) {
             console.log(data);
             return (
                 <tr key={data.id} className="table-row">
-                    <td >{data.name}</td>
+                    <td ><a href={data.url} target="_blank" rel="noreferrer">{data.name}</a></td>
                     <td >{data.price}</td>
                     <td >{data.seller}</td>
                     <td className="table-data-delete"><Button className="button" id={data.id} onClick={props.handleDelete}>×</Button></td>
@@ -24,9 +24,13 @@ export default function WishlistView(props) {
     }
 
     return (
-        <div className="home-list-wrapper">
+        <div className="wishlist-wrapper">
             {handleErrorMessage(props.error)}
-            <Table striped bordered hover className="home-list">
+            <Col md="auto" className="my-1 search-bar-element">
+                <Button className="button" href="/search"> Go back to Search Product</Button>
+            </Col>
+            <hr></hr>
+            <Table striped bordered hover className="wishlist">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -40,5 +44,6 @@ export default function WishlistView(props) {
                 </tbody>
             </Table>
         </div>
+        
     )
 }

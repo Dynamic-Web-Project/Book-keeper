@@ -66,7 +66,7 @@ export default function HomeFormView(props) {
                                 <FormControl
                                     required
                                     placeholder="Amount"
-                                    type="number"
+                                    type="number" min="0"
                                     value={props.number}
                                     onChange={numberOnChange}
                                 />
@@ -76,6 +76,7 @@ export default function HomeFormView(props) {
                             <Col md="auto" className="my-1 home-form-element">
                                 <Button className="button" type="submit">Add</Button>
                                 <Button className="button" href="/search">Search products</Button>
+                                <Button className="button" href="/wishlist"> Wish List</Button>
                             </Col>
                         </Row>
                     </Form>

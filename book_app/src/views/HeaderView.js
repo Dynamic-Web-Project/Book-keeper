@@ -10,6 +10,9 @@ export default function HeaderView(props) {
         if (props.user) {
             return (
                 <NavDropdown title={props.user.email} id="basic-nav-dropdown" align="end">
+                    <NavDropdown.Item as={Link} to="/home">Home</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/wishlist">Wish List</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/search">Search Product</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/aboutus">About Us</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item as={Link} to="/login" onClick={props.logout}>Log Out</NavDropdown.Item>
