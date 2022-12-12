@@ -39,7 +39,7 @@ export default function HomeFormView(props) {
                             </Col>
 
                             {/* Income / Expense selector */}
-                            <Col me="auto" className="my-1 home-form-element">
+                            <Col sm={2} className="my-1 home-form-element">
                                 <Form.Select
                                     required
                                     value={props.type}

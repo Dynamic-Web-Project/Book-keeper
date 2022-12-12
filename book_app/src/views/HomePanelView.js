@@ -15,7 +15,10 @@ export default function HomePanelView(props) {
                 <Card className={headerText}>
                     <Card.Header>{headerText}</Card.Header>
                     <Card.Body>
-                        <Card.Text>{(props.loading && <Loading />) || cardText}</Card.Text>
+                        {props.loading ?
+                            <Loading /> :
+                            <Card.Text>{cardText}</Card.Text>
+                        }
                     </Card.Body>
                 </Card>
             </Col>
