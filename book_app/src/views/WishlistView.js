@@ -16,6 +16,7 @@ export default function WishlistView(props) {
                     <td ><a href={data.url} target="_blank" rel="noreferrer">{data.name}</a></td>
                     <td >{data.price}</td>
                     <td >{data.seller}</td>
+                    <td>{data.shipping}</td>
                     <td className="table-data-delete"><Button className="button" id={data.id} onClick={props.handleDelete}>×</Button></td>
                 </tr>
             )
@@ -27,15 +28,17 @@ export default function WishlistView(props) {
         <div className="wishlist-wrapper">
             {handleErrorMessage(props.error)}
             <Col md="auto" className="my-1 search-bar-element">
-                <Button className="button" href="/search"> Go back to Search Product</Button>
+                <Button className="button" href="/search"> Back to Search </Button>
+                <Button className="button" href="/home"> Back to Home</Button>
             </Col>
             <hr></hr>
             <Table striped bordered hover className="wishlist">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Price</th>
+                        <th>Price(kr)</th>
                         <th>Seller</th>
+                        <th>Shipping(kr)</th>
                         <th></th>
                     </tr>
                 </thead>

@@ -19,7 +19,6 @@ export default function HomeFormView(props) {
         <div className="home-form-wrapper">
             {handleErrorMessage(props.error)}
             {props.loading && <Loading />}
-            <p>Add your income and expenses here. Want to search for a product and compare their prices? Click the Search products button!</p>
             <Row className="align-items-center">
                 <Col>
                     <Form onSubmit={props.handleSubmit} className="home-form">
