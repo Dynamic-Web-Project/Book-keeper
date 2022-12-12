@@ -35,19 +35,22 @@ export default function WishlistView(props) {
                     <td colSpan={5}>No products in wish list! Begin by adding some in Search products!</td>
                 </tr>
             )
+        } else if (props.loading) {
+            return (
+                <tr>
+                    <td colSpan={5}>{<Loading />}</td>
+                </tr>
+            )
         } else { return (array.records.map(listRow)) }
     }
-
 
     return (
         <div className="wishlist-wrapper">
             {handleErrorMessage(props.error)}
             <Row className="align-items-center">
-                <Col md="auto" className="my-1">
-                    <Button className="button" href="/search"> Back to Search </Button>
-                </Col>
-                <Col md="auto" className="my-1">
-                    <Button className="button" href="/home"> Back to Home</Button>
+                <Col md="auto" className="my-1 wishlist-element">
+                    <Button className="button" href="/search">Back to Search</Button>
+                    <Button className="button" href="/home">Back to Home</Button>
                 </Col>
             </Row>
             <hr />
@@ -59,7 +62,7 @@ export default function WishlistView(props) {
                             <th className="table-seller-column">Seller</th>
                             <th className="table-price-column">Price</th>
                             <th className="table-Shipping-column">Shipping</th>
-                            <th className="table-function-column"></th>
+                            <th className="table-function-column" />
                         </tr>
                     </thead>
                     <tbody>
@@ -68,6 +71,5 @@ export default function WishlistView(props) {
                 </Table>
             </div>
         </div >
-
     )
 }

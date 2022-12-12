@@ -8,7 +8,7 @@ export default function SearchResults(props) {
         if (props.loading) {
             return (
                 <tr>
-                    <td colSpan={5}>{props.loading && <Loading />} Searching, please wait! {props.resultsLoadingProgress} completed...</td>
+                    <td colSpan={5}>{<Loading />} Searching, please wait! {props.resultsLoadingProgress} completed...</td>
                 </tr>
             )
         } else if (!props.loading && response) {
@@ -35,7 +35,7 @@ export default function SearchResults(props) {
                         <td className="table-data-seller">{data.seller}</td>
                         <td className="table-data-price">{checkPriceType(data.price)}</td>
                         <td className="table-data-shipping">{checkPriceType(data.shipping)}</td>
-                        {data.url ? <td><Button className="button" id={data.url} onClick={() => addToWishList(data)}>+</Button></td> : <td></td>}
+                        {data.url ? <td><Button className="button" id={data.url} onClick={() => addToWishList(data)}>+</Button></td> : <td />}
                     </tr>
                 )
             }

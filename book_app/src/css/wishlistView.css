@@ -24,6 +24,11 @@
     box-shadow: 0px 0px 8px rgba(0, 0, 0, calc(4/5)) !important;
 }
 
+.wishlist-element button,
+.wishlist-element a {
+    margin-right: 12px;
+}
+
 .wishlist-results-wrapper .table-row {
     vertical-align: middle;
 }

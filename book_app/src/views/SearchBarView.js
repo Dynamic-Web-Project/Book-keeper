@@ -22,18 +22,10 @@ export default function SearchBar(props) {
                                 />
                             </Col>
 
-                            {/* Search-button */}
+                            {/* Search-, Wish List- Home-button */}
                             <Col md="auto" className="my-1 search-bar-element">
                                 <Button className="button" type="submit">Search</Button>
-                            </Col>
-
-                            {/* Wish List-button */}
-                            <Col md="auto" className="my-1 search-bar-element">
                                 <Button className="button" href="/wishlist">Wish list</Button>
-                            </Col>
-
-                            {/* Home-button */}
-                            <Col md="auto" className="my-1 search-bar-element">
                                 <Button className="button" href="/home">Back to Home</Button>
                             </Col>
                         </Row>
