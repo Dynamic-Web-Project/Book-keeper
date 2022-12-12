@@ -25,7 +25,7 @@ export default function HomeFormView(props) {
                     <Form onSubmit={props.handleSubmit} className="home-form">
                         <Row className="align-items-center">
                             {/* Date selector */}
-                            <Col md="auto" className="my-1 home-form-element">
+                            <Col sm={2} className="my-1 home-form-element">
                                 <DatePicker
                                     required
                                     selected={props.date}
@@ -39,7 +39,7 @@ export default function HomeFormView(props) {
                             </Col>
 
                             {/* Income / Expense selector */}
-                            <Col md="auto" className="my-1 home-form-element">
+                            <Col me="auto" className="my-1 home-form-element">
                                 <Form.Select
                                     required
                                     value={props.type}
@@ -72,13 +72,9 @@ export default function HomeFormView(props) {
                                 />
                             </Col>
 
-                            {/* Add-button */}
+                            {/* Add & search-button */}
                             <Col md="auto" className="my-1 home-form-element">
-                                <Button className="button" type="submit">Add to records</Button>
-                            </Col>
-
-                            {/* Search-button */}
-                            <Col md="auto" className="my-1 home-form-element">
+                                <Button className="button" type="submit">Add</Button>
                                 <Button className="button" href="/search">Search products</Button>
                             </Col>
                         </Row>
