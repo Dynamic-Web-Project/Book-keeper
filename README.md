@@ -22,8 +22,11 @@ Search - obtain a list of products by user search query by fetching from API. Us
 ![image](https://user-images.githubusercontent.com/42958783/207597362-fa2a9bd1-1e61-40c1-b451-5471809f6396.png)
 Wish - add desired product from search page to user's wish list (persistent). User can delete wish list products in the same way as in Home.
 
-## Known issues
-- Clicking a link from the API search result does not return to the same page when you go back
+## How to setup
+- Clone this repository
+- Navigate to \book_app
+- Use "npm install" to get all required packages
+- Use "npm run start" to start server
 
 ## Our project file structure 
 
