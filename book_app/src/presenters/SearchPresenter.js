@@ -65,8 +65,8 @@ export default function Search() {
                     // console.log("j counter:" + j);
 
                     getProductResponse = await getProduct(searchProductResponse.job_id);
-                    console.log("productResponse [" + j + "] response: " + JSON.stringify(getProductResponse));
-                    console.log("productResponse [" + j + "] status: " + getProductResponse.status);
+                    // console.log("productResponse [" + j + "] response: " + JSON.stringify(getProductResponse));
+                    // console.log("productResponse [" + j + "] status: " + getProductResponse.status);
 
                     if (getProductResponse?.status === "finished") {
                         setResponse(getProductResponse.results[0].content.offers);
