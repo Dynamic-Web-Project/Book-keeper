@@ -29,6 +29,7 @@ Wish - add desired product from search page to user's wish list (persistent). Us
 - Navigate to \book_app
 - Use "**npm install**" to get all required packages
 - Use "**npm run start**" to start server
+
 (Note that you'll need your own API key for search functionality to work)
 
 ## Our project file structure 
