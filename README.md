@@ -25,8 +25,8 @@ Wish - add desired product from search page to user's wish list (persistent). Us
 ## How to setup
 - Clone this repository
 - Navigate to \book_app
-- Use "npm install" to get all required packages
-- Use "npm run start" to start server
+- Use "**npm install**" to get all required packages
+- Use "**npm run start**" to start server
 
 ## Our project file structure 
 
