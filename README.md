@@ -27,4 +27,4 @@ Wish - add desired product from search page to user's wish list (persistent). Us
 
 ## Our project file structure 
 
-We use the react structure, which means we can use a public folder to store our index files, css file. We store the main files in the source folder. In the app we use the react component to render each presenter part. Our project uses the MVP structure and stores it in source, which also contains app.js, index.js and the rest of the general files.
+We use the React structure, which means we can use a public folder to store our index files, css file. We store the main files in the source folder. In the app we use the React component to render each presenter part. Our project uses the MVP structure and stores it in source, which also contains app.js, index.js and the rest of the general files.
