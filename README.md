@@ -30,7 +30,9 @@ Wish - add desired product from search page to user's wish list (persistent). Us
 - Use "**npm install**" to get all required packages
 - Use "**npm run start**" to start server
 
-(Note that you'll need your own API key for search functionality to work)
+Note that you'll need 
+- your own Price Analytics API key for search functionality
+- your own Firebase configuration for authentication and Firestore database
 
 ## Our project file structure 
 
