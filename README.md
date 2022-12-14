@@ -2,7 +2,7 @@
 
 The API used in this project is [Price Analytics](https://rapidapi.com/3b-data-3b-data-default/api/price-analytics).
 
-Our deployed app on Firebase: https://bookkeeper-kth.web.app/login
+Our deployed app on Firebase: https://bookkeeper-kth.web.app
 
 What we decided to create was a live bookkeeping software website. The way users are able to store their bookkeeping records is by creating an account and logging in. This gives them the opportunity to edit their bookkeeping history, add and delete information including date, description, type and amount of income and expenses in real time.
 
